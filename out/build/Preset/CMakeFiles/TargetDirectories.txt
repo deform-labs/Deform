@@ -1,0 +1,3 @@
+C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/Engine.dir
+C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/ALL_BUILD.dir
+C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/ZERO_CHECK.dir

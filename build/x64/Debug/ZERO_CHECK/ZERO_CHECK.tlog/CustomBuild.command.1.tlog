@@ -1,0 +1,10 @@
+^C:\USERS\YOUSSEF\DOCUMENTS\VSCODE\DEFORM\BUILD\CMAKEFILES\2EC0468C9655B74F3B117D8979A13BD8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Youssef/Documents/VSCode/Deform -BC:/Users/Youssef/Documents/VSCode/Deform/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Youssef/Documents/VSCode/Deform/build/Engine.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
