@@ -1,13 +1,16 @@
-#pragma
-#include <windows.h>
+#pragma once
+//GLFW header
+#include <GLFW/glfw3.h> //no fucking way ts fixed it
+
+//d3d11 headers
 #include <d3d11.h>
 #include <dxgi.h>
 
-class Render {
+class DXRender {
     public:
         IDXGISwapChain* m_swapChain = nullptr;
         ID3D11Device* m_device = nullptr;
         ID3D11DeviceContext* m_context = nullptr;
         ID3D11RenderTargetView* m_rtv = nullptr;
-        bool Initialize(HWND hwnd);
+        bool Initialize(GLFWwindow* hwnd);
 };

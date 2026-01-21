@@ -1,9 +1,6 @@
-// Window.cpp
-
 //libraries
-#include <glad/glad.h>
 #include <GLFW/glfw3.h>
-
+#include <GLFW/glfw3native.h>
 //header files
 #include "Window.h"
 
@@ -24,6 +21,8 @@ bool Window::Create(int width, int height)
 
     m_Window = glfwCreateWindow(width, height, "Trail Engine", nullptr, nullptr);
     m_Created = (m_Window != nullptr);
+
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API); //we will apply api manually
 
     return m_Created;
 

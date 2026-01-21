@@ -1,11 +1,20 @@
+// Defining GLFW_EXPOSE_NATIVE_WIN32 through pre-processor statements
+#define GLFW_EXPOSE_NATIVE_WIN32
+//GLFW headers
+#include <GLFW/glfw3.h>
+#include <GLFW/glfw3native.h>
+//DirectX11 headers and library
 #pragma comment(lib, "d3d11.lib")
 #include <d3d11.h>
 #include <dxgi.h>
 
+//header
 #include "DXRender.h"
 
-bool Render::Initialize(HWND hwnd)
+bool DXRender::Initialize(GLFWwindow* GLFWhwnd)
 {
+    HWND hwnd = glfwGetWin32Window(GLFWhwnd);
+    
     // Initialize Direct3D 11 here
     DXGI_SWAP_CHAIN_DESC scd = {};
     scd.BufferCount = 1;
@@ -49,13 +58,19 @@ bool Render::Initialize(HWND hwnd)
 
     // Optional: set viewport once (you can move this later)
     D3D11_VIEWPORT vp = {};
-    vp.Width = 800; // or get from window size
-    vp.Height = 600;
+    vp.Width = 1280; // or get from window size
+    vp.Height = 720;
     vp.MinDepth = 0.0f;
     vp.MaxDepth = 1.0f;
     m_context->RSSetViewports(1, &vp);
 
     m_context->OMSetRenderTargets(1, &m_rtv, nullptr);
 
+    float clearColor[4] = {0.05f, 0.5f, 1.0f, 0.0f};  //BG color
+
+    // set the BG to the color
+    m_context->ClearRenderTargetView(m_rtv, clearColor);
+
+    
     return SUCCEEDED(hr);
 }

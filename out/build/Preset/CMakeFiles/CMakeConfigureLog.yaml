@@ -48,6 +48,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -66,7 +67,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
       ENV{INCLUDE}:
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Auxiliary\\VS\\include"
@@ -92,9 +93,9 @@ events:
       The output was:
       0
       Versione di MSBuild 17.14.23+b0019275e per .NET Framework
-      Compilazione avviata 19/01/2026 00:14:07.
+      Compilazione avviata 21/01/2026 17:47:03.
       
-      Progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" sul nodo 1 (destinazioni predefinite).
+      Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" sul nodo 1 (destinazioni predefinite).
       PrepareForBuild:
         Creazione directory "Debug\\".
         L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
@@ -107,7 +108,7 @@ events:
         CMakeCCompilerId.c
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
-        CompilerIdC.vcxproj -> C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.exe
+        CompilerIdC.vcxproj -> C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
         :VCEnd
@@ -115,13 +116,13 @@ events:
       FinalizeBuildStatus:
         Eliminazione del file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" in corso.
         Aggiornamento timestamp di "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
-      Compilazione progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" (destinazioni predefinite) completata.
+      Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" (destinazioni predefinite) completata.
       
       Compilazione completata.
           Avvisi: 0
           Errori: 0
       
-      Tempo trascorso 00:00:00.65
+      Tempo trascorso 00:00:00.60
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -129,7 +130,7 @@ events:
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
       
       The C compiler identification is MSVC, found in:
-        C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/4.2.1/CompilerIdC/CompilerIdC.exe
+        C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/4.2.1/CompilerIdC/CompilerIdC.exe
       
   -
     kind: "find-v1"
@@ -166,6 +167,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -201,6 +203,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -219,7 +222,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "find-v1"
     backtrace:
@@ -255,6 +258,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -312,6 +316,9 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/lld-link"
+      - "C:/VulkanSDK/1.4.335.0/Bin/lld-link.com"
+      - "C:/VulkanSDK/1.4.335.0/Bin/lld-link.exe"
+      - "C:/VulkanSDK/1.4.335.0/Bin/lld-link"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
@@ -379,6 +386,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -397,7 +405,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "find-v1"
     backtrace:
@@ -431,6 +439,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -466,6 +475,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -484,7 +494,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "find-v1"
     backtrace:
@@ -518,6 +528,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -574,6 +585,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -592,7 +604,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "find-v1"
     backtrace:
@@ -626,6 +638,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -661,6 +674,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -679,7 +693,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "find-v1"
     backtrace:
@@ -720,6 +734,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -738,7 +753,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
       ENV{INCLUDE}:
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\include"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Auxiliary\\VS\\include"
@@ -764,9 +779,9 @@ events:
       The output was:
       0
       Versione di MSBuild 17.14.23+b0019275e per .NET Framework
-      Compilazione avviata 19/01/2026 00:14:08.
+      Compilazione avviata 21/01/2026 17:47:03.
       
-      Progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" sul nodo 1 (destinazioni predefinite).
+      Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" sul nodo 1 (destinazioni predefinite).
       PrepareForBuild:
         Creazione directory "Debug\\".
         L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
@@ -779,7 +794,7 @@ events:
         CMakeCXXCompilerId.cpp
       Link:
         C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
-        CompilerIdCXX.vcxproj -> C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.exe
+        CompilerIdCXX.vcxproj -> C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.exe
       PostBuildEvent:
         for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
         :VCEnd
@@ -787,13 +802,13 @@ events:
       FinalizeBuildStatus:
         Eliminazione del file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" in corso.
         Aggiornamento timestamp di "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
-      Compilazione progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (destinazioni predefinite) completata.
+      Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (destinazioni predefinite) completata.
       
       Compilazione completata.
           Avvisi: 0
           Errori: 0
       
-      Tempo trascorso 00:00:00.63
+      Tempo trascorso 00:00:00.59
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -801,7 +816,7 @@ events:
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
       
       The CXX compiler identification is MSVC, found in:
-        C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/4.2.1/CompilerIdCXX/CompilerIdCXX.exe
+        C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/4.2.1/CompilerIdCXX/CompilerIdCXX.exe
       
   -
     kind: "find-v1"
@@ -838,6 +853,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -895,6 +911,9 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/lld-link"
+      - "C:/VulkanSDK/1.4.335.0/Bin/lld-link.com"
+      - "C:/VulkanSDK/1.4.335.0/Bin/lld-link.exe"
+      - "C:/VulkanSDK/1.4.335.0/Bin/lld-link"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
@@ -962,6 +981,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -980,7 +1000,7 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "find-v1"
     backtrace:
@@ -1017,6 +1037,7 @@ events:
       - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/Common7/Tools/"
+      - "C:/VulkanSDK/1.4.335.0/Bin/"
       - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
@@ -1043,9 +1064,9 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/Program Files/CMake/sbin/"
       - "C:/Program Files/CMake/"
-      - "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset/bin/"
-      - "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset/sbin/"
-      - "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset/"
+      - "C:/Users/Youssef/Documents/Deform-main/out/install/Preset/bin/"
+      - "C:/Users/Youssef/Documents/Deform-main/out/install/Preset/sbin/"
+      - "C:/Users/Youssef/Documents/Deform-main/out/install/Preset/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc.com"
       - "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/rc.exe"
@@ -1085,6 +1106,7 @@ events:
         - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\Tools\\"
+        - "C:\\VulkanSDK\\1.4.335.0\\Bin"
         - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
         - "C:\\Windows\\system32"
         - "C:\\Windows"
@@ -1103,12 +1125,12 @@ events:
         - "C:\\MinGW\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\vcpkg"
-      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+      CMAKE_INSTALL_PREFIX: "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
         - "C:/Program Files (x86)"
         - "C:/Program Files/CMake"
-        - "C:/Users/Youssef/Documents/VSCode/Deform/out/install/Preset"
+        - "C:/Users/Youssef/Documents/Deform-main/out/install/Preset"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1118,49 +1140,49 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-soh2th"
-      binary: "C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-soh2th"
+      source: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0ztfja"
+      binary: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0ztfja"
     cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
     buildResult:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-soh2th'
+        Change Dir: 'C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0ztfja'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_7323e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1efd4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versione di MSBuild 17.14.23+b0019275e per .NET Framework
-        Compilazione avviata 19/01/2026 00:14:09.
+        Compilazione avviata 21/01/2026 17:47:04.
         
-        Progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-soh2th\\cmTC_7323e.vcxproj" sul nodo 1 (destinazioni predefinite).
+        Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0ztfja\\cmTC_1efd4.vcxproj" sul nodo 1 (destinazioni predefinite).
         PrepareForBuild:
           L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
-          Creazione directory "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-soh2th\\Debug\\".
-          Creazione directory "cmTC_7323e.dir\\Debug\\cmTC_7323e.tlog\\".
+          Creazione directory "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0ztfja\\Debug\\".
+          Creazione directory "cmTC_1efd4.dir\\Debug\\cmTC_1efd4.tlog\\".
         InitializeBuildStatus:
-          Creazione di "cmTC_7323e.dir\\Debug\\cmTC_7323e.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
-          Aggiornamento timestamp di "cmTC_7323e.dir\\Debug\\cmTC_7323e.tlog\\unsuccessfulbuild".
+          Creazione di "cmTC_1efd4.dir\\Debug\\cmTC_1efd4.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
+          Aggiornamento timestamp di "cmTC_1efd4.dir\\Debug\\cmTC_1efd4.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_7323e.dir\\Debug\\\\" /Fd"cmTC_7323e.dir\\Debug\\vc143.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_1efd4.dir\\Debug\\\\" /Fd"cmTC_1efd4.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler versione 19.44.35222 per x64
           Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_7323e.dir\\Debug\\\\" /Fd"cmTC_7323e.dir\\Debug\\vc143.pdb" /external:W3 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_1efd4.dir\\Debug\\\\" /Fd"cmTC_1efd4.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-soh2th\\Debug\\cmTC_7323e.exe" /INCREMENTAL /ILK:"cmTC_7323e.dir\\Debug\\cmTC_7323e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-soh2th/Debug/cmTC_7323e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-soh2th/Debug/cmTC_7323e.lib" /MACHINE:X64  /machine:x64 cmTC_7323e.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_7323e.vcxproj -> C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-soh2th\\Debug\\cmTC_7323e.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0ztfja\\Debug\\cmTC_1efd4.exe" /INCREMENTAL /ILK:"cmTC_1efd4.dir\\Debug\\cmTC_1efd4.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0ztfja/Debug/cmTC_1efd4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0ztfja/Debug/cmTC_1efd4.lib" /MACHINE:X64  /machine:x64 cmTC_1efd4.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_1efd4.vcxproj -> C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0ztfja\\Debug\\cmTC_1efd4.exe
         FinalizeBuildStatus:
-          Eliminazione del file "cmTC_7323e.dir\\Debug\\cmTC_7323e.tlog\\unsuccessfulbuild" in corso.
-          Aggiornamento timestamp di "cmTC_7323e.dir\\Debug\\cmTC_7323e.tlog\\cmTC_7323e.lastbuildstate".
-        Compilazione progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-soh2th\\cmTC_7323e.vcxproj" (destinazioni predefinite) completata.
+          Eliminazione del file "cmTC_1efd4.dir\\Debug\\cmTC_1efd4.tlog\\unsuccessfulbuild" in corso.
+          Aggiornamento timestamp di "cmTC_1efd4.dir\\Debug\\cmTC_1efd4.tlog\\cmTC_1efd4.lastbuildstate".
+        Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0ztfja\\cmTC_1efd4.vcxproj" (destinazioni predefinite) completata.
         
         Compilazione completata.
             Avvisi: 0
             Errori: 0
         
-        Tempo trascorso 00:00:00.60
+        Tempo trascorso 00:00:00.59
         
       exitCode: 0
   -
@@ -1200,50 +1222,50 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-3xidxa"
-      binary: "C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-3xidxa"
+      source: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0u57me"
+      binary: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0u57me"
     cmakeVariables:
-      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
-      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-3xidxa'
+        Change Dir: 'C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0u57me'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9be78.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_98bcd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versione di MSBuild 17.14.23+b0019275e per .NET Framework
-        Compilazione avviata 19/01/2026 00:14:10.
+        Compilazione avviata 21/01/2026 17:47:05.
         
-        Progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-3xidxa\\cmTC_9be78.vcxproj" sul nodo 1 (destinazioni predefinite).
+        Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0u57me\\cmTC_98bcd.vcxproj" sul nodo 1 (destinazioni predefinite).
         PrepareForBuild:
           L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
-          Creazione directory "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-3xidxa\\Debug\\".
-          Creazione directory "cmTC_9be78.dir\\Debug\\cmTC_9be78.tlog\\".
+          Creazione directory "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0u57me\\Debug\\".
+          Creazione directory "cmTC_98bcd.dir\\Debug\\cmTC_98bcd.tlog\\".
         InitializeBuildStatus:
-          Creazione di "cmTC_9be78.dir\\Debug\\cmTC_9be78.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
-          Aggiornamento timestamp di "cmTC_9be78.dir\\Debug\\cmTC_9be78.tlog\\unsuccessfulbuild".
+          Creazione di "cmTC_98bcd.dir\\Debug\\cmTC_98bcd.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
+          Aggiornamento timestamp di "cmTC_98bcd.dir\\Debug\\cmTC_98bcd.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_9be78.dir\\Debug\\\\" /Fd"cmTC_9be78.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_98bcd.dir\\Debug\\\\" /Fd"cmTC_98bcd.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler versione 19.44.35222 per x64
           Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_9be78.dir\\Debug\\\\" /Fd"cmTC_9be78.dir\\Debug\\vc143.pdb" /external:W3 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_98bcd.dir\\Debug\\\\" /Fd"cmTC_98bcd.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-3xidxa\\Debug\\cmTC_9be78.exe" /INCREMENTAL /ILK:"cmTC_9be78.dir\\Debug\\cmTC_9be78.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-3xidxa/Debug/cmTC_9be78.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Youssef/Documents/VSCode/Deform/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-3xidxa/Debug/cmTC_9be78.lib" /MACHINE:X64  /machine:x64 cmTC_9be78.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_9be78.vcxproj -> C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-3xidxa\\Debug\\cmTC_9be78.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0u57me\\Debug\\cmTC_98bcd.exe" /INCREMENTAL /ILK:"cmTC_98bcd.dir\\Debug\\cmTC_98bcd.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0u57me/Debug/cmTC_98bcd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-0u57me/Debug/cmTC_98bcd.lib" /MACHINE:X64  /machine:x64 cmTC_98bcd.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_98bcd.vcxproj -> C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0u57me\\Debug\\cmTC_98bcd.exe
         FinalizeBuildStatus:
-          Eliminazione del file "cmTC_9be78.dir\\Debug\\cmTC_9be78.tlog\\unsuccessfulbuild" in corso.
-          Aggiornamento timestamp di "cmTC_9be78.dir\\Debug\\cmTC_9be78.tlog\\cmTC_9be78.lastbuildstate".
-        Compilazione progetto "C:\\Users\\Youssef\\Documents\\VSCode\\Deform\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-3xidxa\\cmTC_9be78.vcxproj" (destinazioni predefinite) completata.
+          Eliminazione del file "cmTC_98bcd.dir\\Debug\\cmTC_98bcd.tlog\\unsuccessfulbuild" in corso.
+          Aggiornamento timestamp di "cmTC_98bcd.dir\\Debug\\cmTC_98bcd.tlog\\cmTC_98bcd.lastbuildstate".
+        Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-0u57me\\cmTC_98bcd.vcxproj" (destinazioni predefinite) completata.
         
         Compilazione completata.
             Avvisi: 0
             Errori: 0
         
-        Tempo trascorso 00:00:00.61
+        Tempo trascorso 00:00:00.59
         
       exitCode: 0
   -
@@ -1274,4 +1296,177 @@ events:
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.44.35222.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:160 (check_c_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "src/external/GLFW/CMakeLists.txt:52 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-rxcned"
+      binary: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-rxcned"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Youssef/Documents/Deform-main/src/external/GLFW/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-rxcned'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_af434.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Versione di MSBuild 17.14.23+b0019275e per .NET Framework
+        Compilazione avviata 21/01/2026 17:47:06.
+        
+        Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\cmTC_af434.vcxproj" sul nodo 1 (destinazioni predefinite).
+        PrepareForBuild:
+          L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
+          Creazione directory "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\Debug\\".
+          Creazione directory "cmTC_af434.dir\\Debug\\cmTC_af434.tlog\\".
+        InitializeBuildStatus:
+          Creazione di "cmTC_af434.dir\\Debug\\cmTC_af434.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
+          Aggiornamento timestamp di "cmTC_af434.dir\\Debug\\cmTC_af434.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_af434.dir\\Debug\\\\" /Fd"cmTC_af434.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler versione 19.44.35222 per x64
+          Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_af434.dir\\Debug\\\\" /Fd"cmTC_af434.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\src.c"
+          src.c
+        C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\src.c(1,10): error C1083: Non ├¿ possibile aprire il file inclusione: 'pthread.h': No such file or directory [C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\cmTC_af434.vcxproj]
+        Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\cmTC_af434.vcxproj" (destinazioni predefinite) NON COMPLETATA.
+        
+        Compilazione NON RIUSCITA.
+        
+        "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\cmTC_af434.vcxproj" (destinazione predefinita) (1) ->
+        (destinazione: ClCompile) -> 
+          C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\src.c(1,10): error C1083: Non ├¿ possibile aprire il file inclusione: 'pthread.h': No such file or directory [C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-rxcned\\cmTC_af434.vcxproj]
+        
+            Avvisi: 0
+            Errori: 1
+        
+        Tempo trascorso 00:00:00.36
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:175 (check_library_exists)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:238 (_threads_check_lib)"
+      - "src/external/GLFW/CMakeLists.txt:52 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-qwhmre"
+      binary: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-qwhmre"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Youssef/Documents/Deform-main/src/external/GLFW/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-qwhmre'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_3d5d8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Versione di MSBuild 17.14.23+b0019275e per .NET Framework
+        Compilazione avviata 21/01/2026 17:47:07.
+        
+        Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\cmTC_3d5d8.vcxproj" sul nodo 1 (destinazioni predefinite).
+        PrepareForBuild:
+          L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
+          Creazione directory "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\Debug\\".
+          Creazione directory "cmTC_3d5d8.dir\\Debug\\cmTC_3d5d8.tlog\\".
+        InitializeBuildStatus:
+          Creazione di "cmTC_3d5d8.dir\\Debug\\cmTC_3d5d8.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
+          Aggiornamento timestamp di "cmTC_3d5d8.dir\\Debug\\cmTC_3d5d8.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_3d5d8.dir\\Debug\\\\" /Fd"cmTC_3d5d8.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler versione 19.44.35222 per x64
+          Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_3d5d8.dir\\Debug\\\\" /Fd"cmTC_3d5d8.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\Debug\\cmTC_3d5d8.exe" /INCREMENTAL /ILK:"cmTC_3d5d8.dir\\Debug\\cmTC_3d5d8.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-qwhmre/Debug/cmTC_3d5d8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-qwhmre/Debug/cmTC_3d5d8.lib" /MACHINE:X64  /machine:x64 cmTC_3d5d8.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: impossibile aprire il file 'pthreads.lib' [C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\cmTC_3d5d8.vcxproj]
+        Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\cmTC_3d5d8.vcxproj" (destinazioni predefinite) NON COMPLETATA.
+        
+        Compilazione NON RIUSCITA.
+        
+        "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\cmTC_3d5d8.vcxproj" (destinazione predefinita) (1) ->
+        (destinazione: Link) -> 
+          LINK : fatal error LNK1104: impossibile aprire il file 'pthreads.lib' [C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-qwhmre\\cmTC_3d5d8.vcxproj]
+        
+            Avvisi: 0
+            Errori: 1
+        
+        Tempo trascorso 00:00:00.47
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:175 (check_library_exists)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:239 (_threads_check_lib)"
+      - "src/external/GLFW/CMakeLists.txt:52 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-5sbkno"
+      binary: "C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-5sbkno"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Youssef/Documents/Deform-main/src/external/GLFW/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-5sbkno'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Professional/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d251c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Versione di MSBuild 17.14.23+b0019275e per .NET Framework
+        Compilazione avviata 21/01/2026 17:47:08.
+        
+        Progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\cmTC_d251c.vcxproj" sul nodo 1 (destinazioni predefinite).
+        PrepareForBuild:
+          L'output strutturato ├¿ abilitato. La formattazione della diagnostica del compilatore rifletter├á la gerarchia degli errori. Per altri dettagli, vedere https://aka.ms/cpp/structured-output.
+          Creazione directory "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\Debug\\".
+          Creazione directory "cmTC_d251c.dir\\Debug\\cmTC_d251c.tlog\\".
+        InitializeBuildStatus:
+          Creazione di "cmTC_d251c.dir\\Debug\\cmTC_d251c.tlog\\unsuccessfulbuild". ├ê stato specificato "AlwaysCreate".
+          Aggiornamento timestamp di "cmTC_d251c.dir\\Debug\\cmTC_d251c.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_d251c.dir\\Debug\\\\" /Fd"cmTC_d251c.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler versione 19.44.35222 per x64
+          Copyright (C) Microsoft Corporation. Tutti i diritti  sono riservati.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_d251c.dir\\Debug\\\\" /Fd"cmTC_d251c.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\Debug\\cmTC_d251c.exe" /INCREMENTAL /ILK:"cmTC_d251c.dir\\Debug\\cmTC_d251c.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-5sbkno/Debug/cmTC_d251c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/Youssef/Documents/Deform-main/out/build/Preset/CMakeFiles/CMakeScratch/TryCompile-5sbkno/Debug/cmTC_d251c.lib" /MACHINE:X64  /machine:x64 cmTC_d251c.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: impossibile aprire il file 'pthread.lib' [C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\cmTC_d251c.vcxproj]
+        Compilazione progetto "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\cmTC_d251c.vcxproj" (destinazioni predefinite) NON COMPLETATA.
+        
+        Compilazione NON RIUSCITA.
+        
+        "C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\cmTC_d251c.vcxproj" (destinazione predefinita) (1) ->
+        (destinazione: Link) -> 
+          LINK : fatal error LNK1104: impossibile aprire il file 'pthread.lib' [C:\\Users\\Youssef\\Documents\\Deform-main\\out\\build\\Preset\\CMakeFiles\\CMakeScratch\\TryCompile-5sbkno\\cmTC_d251c.vcxproj]
+        
+            Avvisi: 0
+            Errori: 1
+        
+        Tempo trascorso 00:00:00.46
+        
+      exitCode: 1
 ...

@@ -1,0 +1,3 @@
+C:/Users/Youssef/Documents/Deform-main/ColorPicker/CMakeFiles/ColorPicker.dir
+C:/Users/Youssef/Documents/Deform-main/ColorPicker/CMakeFiles/ALL_BUILD.dir
+C:/Users/Youssef/Documents/Deform-main/ColorPicker/CMakeFiles/ZERO_CHECK.dir

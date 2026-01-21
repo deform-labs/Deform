@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Youssef\Documents\VSCode\Deform\out\build\Preset\CMakeFiles\b9c3d0e331a4d873574ab4b35e4a8030\generate.stamp.rule">
+    <CustomBuild Include="C:\Users\Youssef\Documents\Deform-main\out\build\Preset\CMakeFiles\589b4f89361af53e6453b7cafd6d8c3e\generate.stamp.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{A4CA4E9B-410A-3582-B98E-DBCA76DC7DE1}</UniqueIdentifier>
+      <UniqueIdentifier>{402157E6-A700-3A10-8E41-5E56A3E0386A}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
