@@ -22,13 +22,13 @@
 	"dependencies" : 
 	[
 		{
+			"id" : "TrailEngine::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "glfw::@a61d9e6d14d3bf74a884"
 		},
 		{
 			"id" : "glad::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "TrailEngine::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
@@ -44,13 +44,13 @@
 	"orderDependencies" : 
 	[
 		{
+			"id" : "TrailEngine::@6890427a1f51a3e7e1df"
+		},
+		{
 			"id" : "glfw::@a61d9e6d14d3bf74a884"
 		},
 		{
 			"id" : "glad::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "TrailEngine::@6890427a1f51a3e7e1df"
 		}
 	],
 	"paths" : 

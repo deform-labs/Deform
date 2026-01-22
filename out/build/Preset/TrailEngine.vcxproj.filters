@@ -10,6 +10,9 @@
     <ClCompile Include="C:\Users\Youssef\Documents\Deform-main\src\core\render\d3d11\DXRender.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Youssef\Documents\Deform-main\src\core\render\opengl\GLRender.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Youssef\Documents\Deform-main\CMakeLists.txt" />

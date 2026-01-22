@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -112,10 +112,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -135,7 +135,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\Debug\glfw3.lib;lib\Debug\glad.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\Debug\glfw3.lib;lib\Debug\glad.lib;imgui.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -154,7 +154,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -181,10 +181,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -204,7 +204,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\Release\glfw3.lib;lib\Release\glad.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\Release\glfw3.lib;lib\Release\glad.lib;imgui.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -223,7 +223,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -250,10 +250,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -273,7 +273,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\MinSizeRel\glfw3.lib;lib\MinSizeRel\glad.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\MinSizeRel\glfw3.lib;lib\MinSizeRel\glad.lib;imgui.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -292,7 +292,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <BufferSecurityCheck></BufferSecurityCheck>
@@ -318,10 +318,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;GLFW_INCLUDE_NONE;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Youssef\Documents\Deform-main\src;C:\Users\Youssef\Documents\Deform-main\src\external\glad\include;C:\Users\Youssef\Documents\Deform-main\src\external\GLFW\include;C:\Users\Youssef\Documents\Deform-main\src\external\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -341,7 +341,7 @@ exit /b %1
 if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
     <Link>
-      <AdditionalDependencies>lib\RelWithDebInfo\glfw3.lib;lib\RelWithDebInfo\glad.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>lib\RelWithDebInfo\glfw3.lib;lib\RelWithDebInfo\glad.lib;imgui.lib;opengl32.lib;d3d11.lib;dxgi.lib;dxguid.lib;d3dcompiler.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <DataExecutionPrevention></DataExecutionPrevention>
@@ -419,6 +419,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\Youssef\Documents\Deform-main\src\main.cpp" />
     <ClCompile Include="C:\Users\Youssef\Documents\Deform-main\src\graphics\Window.cpp" />
     <ClCompile Include="C:\Users\Youssef\Documents\Deform-main\src\core\render\d3d11\DXRender.cpp" />
+    <ClCompile Include="C:\Users\Youssef\Documents\Deform-main\src\core\render\opengl\GLRender.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

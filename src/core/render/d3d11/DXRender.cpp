@@ -71,6 +71,7 @@ bool DXRender::Initialize(GLFWwindow* GLFWhwnd)
     // set the BG to the color
     m_context->ClearRenderTargetView(m_rtv, clearColor);
 
-    
+    m_swapChain->Present(1, 0);
+
     return SUCCEEDED(hr);
 }

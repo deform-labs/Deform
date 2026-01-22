@@ -23,6 +23,12 @@ target_include_directories(glad PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/glad/include
 )
 
+# imgui
+
+target_include_directories(glad PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/imgui
+)
+
 # --------------------
 # GLFW (build from source)
 # --------------------
@@ -44,7 +50,7 @@ add_executable(TrailEngine
     src/main.cpp
     src/graphics/Window.cpp
     src/core/render/d3d11/DXRender.cpp
-    # src/core/render/opengl/GLRender.cpp BREAKS the compiler
+     src/core/render/opengl/GLRender.cpp
     # src/core/render/vulkan/VKRender.cpp  # uncomment when ready
 )
 
@@ -60,12 +66,14 @@ target_include_directories(TrailEngine PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/glad/include
     ${CMAKE_CURRENT_SOURCE_DIR}/src/external/GLFW/include   # ← FIX PRINCIPALE per GLFW/glfw3.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/external/imgui
 )
 
 # Link libraries
 target_link_libraries(TrailEngine PRIVATE
     glfw                # GLFW static/dynamic
     glad                # GL loader
+    imgui               # imgui loader
     OpenGL::GL          # OpenGL per GLRender
 )
 

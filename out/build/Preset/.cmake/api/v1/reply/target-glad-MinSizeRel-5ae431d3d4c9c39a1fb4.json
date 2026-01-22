@@ -43,6 +43,12 @@
 				"file" : 0,
 				"line" : 22,
 				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 0
 			}
 		]
 	},
@@ -65,6 +71,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "C:/Users/Youssef/Documents/Deform-main/src/external/glad/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "C:/Users/Youssef/Documents/Deform-main/src/external/imgui"
 				}
 			],
 			"language" : "C",
