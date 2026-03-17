@@ -198,4 +198,12 @@
   <ItemGroup>
     <Library Include="src\external\GLFW\lib-vc2022\glfw3.lib" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="src\assets\Fonts\Roboto-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\assets\img\Cursor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

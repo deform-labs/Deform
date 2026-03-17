@@ -31,7 +31,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
     if (!Initializer.InitD3d11()) { Logger::Log("InitD3d11 FAILED\n"); return -1; }
 
     ImGuiIO& io = ImGui::GetIO();
+
+
+    ImFont* font = io.Fonts->AddFontFromFileTTF("src/assets/Fonts/Roboto-Regular.ttf", 14.0f);
+
+    if (!font)
+		Logger::Log("Failed to load font: Roboto-Regular.ttf\n");
+
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+	io.FontDefault = font;
 
 	Logger::Log("Initialization complete. Entering main loop.");
 
