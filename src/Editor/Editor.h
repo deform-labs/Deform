@@ -12,11 +12,17 @@
 
 namespace Editor {
 
-	class UI {
-		public:
-			bool Init();
-			void Update();
-	};
+	namespace UI {
+		class Hierarchy	{
+			public:
+				static void UpdateHierarchy();
+		};
+
+		class MainBar {
+			public:
+				static void UpdateMainBar();
+		};
+	}
 
 	class Logger {
 		public:

@@ -17,6 +17,8 @@ class DXRender {
         ID3D11RenderTargetView* m_sceneRTV = nullptr;
         ID3D11ShaderResourceView* m_sceneSRV = nullptr;
 
+        ID3D11VertexShader* m_skyVSBlob = nullptr;
+
         bool Initialize(GLFWwindow* hwnd);
         bool InitializeImgui(GLFWwindow* hwnd);
 		void Resize(UINT width, UINT height);

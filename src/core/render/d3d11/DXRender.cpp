@@ -9,11 +9,15 @@
 #pragma comment(lib, "d3d11.lib")
 #include <d3d11.h>
 #include <dxgi.h>
+#include <d3dcompiler.h>
+#include "DDSTextureLoader/DDSTextureLoader11.h"
 
 
 //header
 #include "DXRender.h"
 #include <cstdio>
+
+#include "stdalign.h"
 
 #include "imgui/imgui.h"
 #include <imgui/backends/imgui_impl_glfw.h>
@@ -143,6 +147,24 @@ bool DXRender::Initialize(GLFWwindow* GLFWhwnd)
         return false;
     }
 
+	ID3DBlob* skyVertexShaderBlob = nullptr;
+
+	// loadShaderFromFile(m_device, "../src/shaders/sky.hlsl", "VSMain", "vs_5_0", &skyVertexShaderBlob);
+
+    ID3D11ShaderResourceView* g_skyboxTextureView = nullptr;
+    ID3D11Resource* g_skyboxTexture = nullptr;
+
+    hr = DirectX::CreateDDSTextureFromFile(
+        m_device,          // Your ID3D11Device*
+        L"C:/Users/youssef/3D Objects/Deform_Engine/Deform/src/assets/shaders/sky_cubemap.dds",         // Path to your DDS file
+        &g_skyboxTexture,       // Output: ID3D11Resource* (the texture)
+        &g_skyboxTextureView    // Output: ID3D11ShaderResourceView* (for the shader)
+    );
+
+    if (FAILED(hr)) {
+        Logger::Log("Failed to load sky cubemap DDS!");
+    }
+
 	Logger::Log("DirectX 11 initialization successful.");
     return true;
 }
@@ -210,4 +232,41 @@ void DXRender::Resize(UINT width, UINT height)
     m_device->CreateTexture2D(&td, nullptr, &m_sceneTexture);
     m_device->CreateRenderTargetView(m_sceneTexture, nullptr, &m_sceneRTV);
     m_device->CreateShaderResourceView(m_sceneTexture, nullptr, &m_sceneSRV);
+}
+
+bool loadShaderFromFile(ID3D11Device* device, const char* filePath, const char* entryPoint, const char* target, ID3DBlob** shaderBlob)
+{
+    UINT compileFlags = D3DCOMPILE_ENABLE_STRICTNESS;
+
+    ID3DBlob* errorBlob = nullptr;
+    HRESULT hr = D3DCompileFromFile(
+		L"../src/shaders/sky.hlsl",
+        nullptr,
+        D3D_COMPILE_STANDARD_FILE_INCLUDE,
+        entryPoint,
+        target,
+        compileFlags,
+        0,
+        shaderBlob,
+        &errorBlob
+    );
+
+	device->CreateVertexShader((*shaderBlob)->GetBufferPointer(), (*shaderBlob)->GetBufferSize(), nullptr, nullptr);
+	device->CreatePixelShader((*shaderBlob)->GetBufferPointer(), (*shaderBlob)->GetBufferSize(), nullptr, nullptr);
+
+    if (FAILED(hr))
+    {
+        if (errorBlob)
+        {
+            Logger::Log("Shader compilation error");
+            errorBlob->Release();
+        }
+        else
+        {
+            Logger::Log("Failed to compile shader");
+        }
+        return false;
+    }
+
+	return true;
 }

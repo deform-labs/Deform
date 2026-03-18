@@ -3,31 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\bin\\imgui.ini||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:bin\\imgui.ini||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\core\\render\\d3d11\\DXRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\core\\render\\d3d11\\DXRender.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\logger.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\Editor\\src\\logger.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\editor\\Editor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\editor\\Editor.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\assets\\shaders\\sky.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\assets\\shaders\\sky.hlsl||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\graphics\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\graphics\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\PROGRAM FILES (X86)\\WINDOWS KITS\\10\\INCLUDE\\10.0.26100.0\\SHARED\\MINWINDEF.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\EditorUIComponents\\MainMenuBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\Editor\\src\\EditorUIComponents\\MainMenuBar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\core\\render\\d3d11\\DXRender.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\core\\render\\d3d11\\DXRender.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{320E22EA-00AC-7A8E-974B-A890D399D822}|Deform Engine.vcxproj|solutionrelative:src\\config.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\EditorUIComponents\\Hierarchy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\Editor\\src\\EditorUIComponents\\Hierarchy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,46 +50,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "logger.cpp",
-              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\logger.cpp",
-              "RelativeDocumentMoniker": "src\\Editor\\src\\logger.cpp",
-              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\logger.cpp",
-              "RelativeToolTip": "src\\Editor\\src\\logger.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-17T19:54:23.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
               "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
-              "ViewState": "AgIAACAAAAAAAAAAAAAQwBcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-17T19:37:46.296Z",
+              "WhenOpened": "2026-03-18T16:31:57.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Editor.h",
-              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\Editor.h",
-              "RelativeDocumentMoniker": "src\\Editor\\Editor.h",
-              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\Editor.h",
-              "RelativeToolTip": "src\\Editor\\Editor.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T19:54:33.877Z",
+              "DocumentIndex": 2,
+              "Title": "sky.hlsl",
+              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\assets\\shaders\\sky.hlsl",
+              "RelativeDocumentMoniker": "src\\assets\\shaders\\sky.hlsl",
+              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\assets\\shaders\\sky.hlsl",
+              "RelativeToolTip": "src\\assets\\shaders\\sky.hlsl",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2026-03-18T16:26:43.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "DXRender.h",
+              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\core\\render\\d3d11\\DXRender.h",
+              "RelativeDocumentMoniker": "src\\core\\render\\d3d11\\DXRender.h",
+              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\core\\render\\d3d11\\DXRender.h",
+              "RelativeToolTip": "src\\core\\render\\d3d11\\DXRender.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-18T14:45:27.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "config.h",
+              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\config.h",
+              "RelativeDocumentMoniker": "src\\config.h",
+              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\config.h",
+              "RelativeToolTip": "src\\config.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-18T14:01:02.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Hierarchy.cpp",
+              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\EditorUIComponents\\Hierarchy.cpp",
+              "RelativeDocumentMoniker": "src\\Editor\\src\\EditorUIComponents\\Hierarchy.cpp",
+              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\EditorUIComponents\\Hierarchy.cpp",
+              "RelativeToolTip": "src\\Editor\\src\\EditorUIComponents\\Hierarchy.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-18T13:57:12.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainMenuBar.cpp",
+              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\EditorUIComponents\\MainMenuBar.cpp",
+              "RelativeDocumentMoniker": "src\\Editor\\src\\EditorUIComponents\\MainMenuBar.cpp",
+              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\Editor\\src\\EditorUIComponents\\MainMenuBar.cpp",
+              "RelativeToolTip": "src\\Editor\\src\\EditorUIComponents\\MainMenuBar.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-18T13:48:37.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Window.cpp",
               "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\graphics\\Window.cpp",
               "RelativeDocumentMoniker": "src\\graphics\\Window.cpp",
@@ -97,39 +139,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Debug",
-              "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\bin\\imgui.ini",
-              "RelativeDocumentMoniker": "bin\\imgui.ini",
-              "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\bin\\imgui.ini",
-              "RelativeToolTip": "bin\\imgui.ini",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002768|",
-              "WhenOpened": "2026-03-17T20:14:36.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "minwindef.h",
-              "DocumentMoniker": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\minwindef.h",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\minwindef.h",
-              "ToolTip": "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\minwindef.h",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.26100.0\\shared\\minwindef.h",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAAAIEAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-17T19:43:23.219Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DXRender.cpp",
               "DocumentMoniker": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\core\\render\\d3d11\\DXRender.cpp",
               "RelativeDocumentMoniker": "src\\core\\render\\d3d11\\DXRender.cpp",
               "ToolTip": "C:\\Users\\youssef\\3D Objects\\Deform_Engine\\Deform\\src\\core\\render\\d3d11\\DXRender.cpp",
               "RelativeToolTip": "src\\core\\render\\d3d11\\DXRender.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAhwKQAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-17T19:42:10.12Z",
               "EditorCaption": ""

@@ -3,6 +3,7 @@ C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\core\object\Object.cpp;C:\U
 C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\core\render\d3d11\DXRender.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\DXRender.obj
 C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\core\scene\scene.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\scene.obj
 C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\editor\src\EditorUI.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\EditorUI.obj
+C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\Editor\src\EditorUIComponents\MainMenuBar.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\MainMenuBar.obj
 C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\Editor\src\logger.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\logger.obj
 C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\external\imgui\backends\imgui_impl_dx11.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\imgui_impl_dx11.obj
 C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\external\imgui\backends\imgui_impl_glfw.cpp;C:\Users\youssef\3D Objects\Deform_Engine\Deform\Intermediate\Release\imgui_impl_glfw.obj

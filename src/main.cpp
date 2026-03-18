@@ -13,17 +13,22 @@
 #include <cstdio>
 
 #include "init.h"
+#include "config.h"
+
 #include "Editor/Editor.h"
 
 Init Initializer;
+
+Config config;
+
 DXRender d3d11renderer;
 Window GLFWHandler;
 
 
+
+
 // Editor stuff
 using namespace Editor;
-
-UI editorUI;
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 {
@@ -48,20 +53,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
     while (!glfwWindowShouldClose(GLFWHandler.GetWindow()))
     {
         glfwPollEvents();
-
-        
-        if (d3d11renderer.m_sceneRTV)
-        {
-            float sceneClear[4] = { 0.15f, 0.15f, 0.5f, 1.0f };
-            d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_sceneRTV, nullptr);
-            d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_sceneRTV, sceneClear);
-        }
-
-        ID3D11DepthStencilView* nullDSV = nullptr;
-
-        float clearColor[4] = { 0.05f, 0.5f, 1.0f, 0.0f };
-        d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_rtv, nullptr);
-        d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_rtv, clearColor);
 
 
         ImGui_ImplDX11_NewFrame();
@@ -91,29 +82,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 
         ImGui::End();
 
-        if (ImGui::BeginMainMenuBar())
-        {
-            if (ImGui::BeginMenu("File"))
-            {
-                ImGui::MenuItem("New Scene");
-                ImGui::MenuItem("Open...");
-                ImGui::MenuItem("Save");
-                ImGui::EndMenu();
-            }
-            if (ImGui::BeginMenu("View"))
-            {
-                static bool showHierarchy = true;
-                static bool showInspector = true;
-                static bool showScene = true;
-                static bool showConsole = true;
-                ImGui::MenuItem("Hierarchy", nullptr, &showHierarchy);
-                ImGui::MenuItem("Inspector", nullptr, &showInspector);
-                ImGui::MenuItem("Scene", nullptr, &showScene);
-                ImGui::MenuItem("Console", nullptr, &showConsole);
-                ImGui::EndMenu();
-            }
-            ImGui::EndMainMenuBar();
-        }
+       UI::MainBar::UpdateMainBar();
 
         ImGuiViewport* main_viewport = ImGui::GetMainViewport();
         ImGui::DockSpaceOverViewport(main_viewport->ID);
@@ -125,13 +94,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 
         if (showHierarchy)
         {
-            ImGui::Begin("Hierarchy", &showHierarchy);
-            ImGui::TextUnformatted("Scene");
-            ImGui::Separator();
-            ImGui::Selectable("Camera");
-            ImGui::Selectable("Light");
-            ImGui::Selectable("Cube");
-            ImGui::End();
+            UI::Hierarchy::UpdateHierarchy();
         }
 
         if (showInspector)
@@ -176,6 +139,19 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
 
             ImGui::End();
         }
+
+        
+        if (d3d11renderer.m_sceneRTV)
+        {
+            d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_sceneRTV, nullptr);
+            d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_sceneRTV, config.clearColor);
+        }
+
+        ID3D11DepthStencilView* nullDSV = nullptr;
+
+        float clearColor[4] = { 0.05f, 0.5f, 1.0f, 0.0f };
+        d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_rtv, nullptr);
+        d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_rtv, clearColor);
 
         ImGui::Render();
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());

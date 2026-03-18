@@ -1,1 +1,9 @@
-﻿  Deform Engine.vcxproj -> C:\Users\youssef\3D Objects\Deform_Engine\Deform\bin\Release\Deform Engine_Release.exe
+﻿  EditorUI.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\minwindef.h(130,9): warning C4005: 'APIENTRY': ridefinizione macro
+  (compilazione del file di origine 'src/editor/src/EditorUI.cpp')
+      C:\Users\youssef\3D Objects\Deform_Engine\Deform\src\external\GLFW\include\GLFW\glfw3.h(123,11):
+      vedi la precedente definizione di 'APIENTRY'
+  
+LINK : warning LNK4075: '/INCREMENTAL' ignorato a causa della specifica di '/OPT:ICF'
+EditorUI.obj : error LNK2019: riferimento al simbolo esterno "public: __cdecl Hierarchy::Hierarchy(void)" (??0Hierarchy@@QEAA@XZ) non risolto nella funzione "public: static void __cdecl Editor::UI::Update(void)" (?Update@UI@Editor@@SAXXZ)
+.\bin\Release\Deform Engine_Release.exe : fatal error LNK1120: 1 esterni non risolti

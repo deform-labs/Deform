@@ -140,8 +140,10 @@
     <ClCompile Include="src\core\object\Object.cpp" />
     <ClCompile Include="src\core\render\d3d11\DXRender.cpp" />
     <ClCompile Include="src\core\scene\scene.cpp" />
-    <ClCompile Include="src\editor\src\EditorUI.cpp" />
+    <ClCompile Include="src\Editor\src\EditorUIComponents\Hierarchy.cpp" />
+    <ClCompile Include="src\Editor\src\EditorUIComponents\MainMenuBar.cpp" />
     <ClCompile Include="src\Editor\src\logger.cpp" />
+    <ClCompile Include="src\external\DDSTextureLoader\DDSTextureLoader11.cpp" />
     <ClCompile Include="src\external\imgui\backends\imgui_impl_dx11.cpp" />
     <ClCompile Include="src\external\imgui\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\external\imgui\imgui.cpp" />
@@ -162,6 +164,7 @@
     <ClInclude Include="src\core\render\d3d11\DXRender.h" />
     <ClInclude Include="src\core\scene\scene.h" />
     <ClInclude Include="src\editor\Editor.h" />
+    <ClInclude Include="src\external\DDSTextureLoader\DDSTextureLoader11.h" />
     <ClInclude Include="src\external\glfw\include\glfw\glfw3.h" />
     <ClInclude Include="src\external\glfw\include\glfw\glfw3native.h" />
     <ClInclude Include="src\external\imgui\backends\imgui_impl_dx11.h" />
@@ -248,6 +251,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\assets\img\Cursor.png" />
+    <Image Include="src\assets\img\sky_cubemap.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="src\assets\shaders\sky.hlsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
