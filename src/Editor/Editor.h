@@ -18,9 +18,19 @@ namespace Editor {
 				static void UpdateHierarchy();
 		};
 
+		class Inspector {
+		public:
+			static void UpdateInspector();
+		};
+
 		class MainBar {
 			public:
 				static void UpdateMainBar();
+		};
+
+		class Console {
+		public:
+			static void UpdateConsole();
 		};
 	}
 

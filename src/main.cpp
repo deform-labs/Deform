@@ -54,112 +54,95 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int nCmdShow)
     {
         glfwPollEvents();
 
+        {
+            ImGui_ImplDX11_NewFrame();
+            ImGui_ImplGlfw_NewFrame();
+            ImGui::NewFrame();
 
-        ImGui_ImplDX11_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+            ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+            ImGuiViewport* viewport = ImGui::GetMainViewport();
+            ImGui::SetNextWindowPos(viewport->Pos);
+            ImGui::SetNextWindowSize(viewport->Size);
+            ImGui::SetNextWindowViewport(viewport->ID);
+            window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
+                ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
+                ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
 
-        ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
-        ImGuiViewport* viewport = ImGui::GetMainViewport();
-        ImGui::SetNextWindowPos(viewport->Pos);
-        ImGui::SetNextWindowSize(viewport->Size);
-        ImGui::SetNextWindowViewport(viewport->ID);
-        window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
-            ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
-            ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+            ImGui::Begin("DockSpaceHost", nullptr, window_flags);
 
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
-        ImGui::Begin("DockSpaceHost", nullptr, window_flags);
+            ImGui::SetNextWindowPos(ImVec2(8, 8), ImGuiCond_Always);
+            ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
 
-        ImGui::SetNextWindowPos(ImVec2(8, 8), ImGuiCond_Always);
-        ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
+            ImGui::PopStyleVar(2);
 
-        ImGui::PopStyleVar(2);
+            ImGuiID dockspace_id = ImGui::GetID("MainDockSpace");
+            ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f));
 
-        ImGuiID dockspace_id = ImGui::GetID("MainDockSpace");
-        ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f));
+            ImGui::End();
 
-        ImGui::End();
 
-       UI::MainBar::UpdateMainBar();
+            ImGuiViewport* main_viewport = ImGui::GetMainViewport();
+            ImGui::DockSpaceOverViewport(main_viewport->ID);
+        }
 
-        ImGuiViewport* main_viewport = ImGui::GetMainViewport();
-        ImGui::DockSpaceOverViewport(main_viewport->ID);
+        UI::MainBar::UpdateMainBar();
 
         static bool showHierarchy = true;
         static bool showInspector = true;
         static bool showScene = true;
         static bool showConsole = true;
 
-        if (showHierarchy)
         {
-            UI::Hierarchy::UpdateHierarchy();
-        }
-
-        if (showInspector)
-        {
-            ImGui::Begin("Inspector", &showInspector);
-            ImGui::TextUnformatted("Select an object in the Hierarchy");
-            ImGui::Separator();
-            ImGui::TextUnformatted("Transform");
-
-            static float pos[3] = { 0.0f, 0.0f, 0.0f };
-            static float rot[3] = { 0.0f, 0.0f, 0.0f };
-            static float scl[3] = { 1.0f, 1.0f, 1.0f };
-
-            ImGui::DragFloat3("Position", pos, 0.1f);
-            ImGui::DragFloat3("Rotation", rot, 0.1f);
-            ImGui::DragFloat3("Scale", scl, 0.1f);
-
-            ImGui::End();
-        }
-
-        if (showScene)
-        {
-            ImGui::Begin("Scene", &showScene);
-            ImVec2 size = ImGui::GetContentRegionAvail();
-            if (d3d11renderer.m_sceneSRV)
-                ImGui::Image((ImTextureID)d3d11renderer.m_sceneSRV, size);
-            else
-                ImGui::TextUnformatted("(Scene texture not available)");
-            ImGui::End();
-        }
-
-        if (showConsole)
-        {
-            ImGui::Begin("Console", &showConsole);
-
-            const auto& logs = Logger::GetLogs();
-
-            for (const auto& log : logs)
+            if (showHierarchy)
             {
-                ImGui::Text("%s", log.c_str());
+                UI::Hierarchy::UpdateHierarchy();
             }
 
-            ImGui::End();
-        }
+            if (showInspector)
+            {
+                UI::Inspector::UpdateInspector();
+            }
 
-        
-        if (d3d11renderer.m_sceneRTV)
+            if (showConsole)
+            {
+                UI::Console::UpdateConsole();
+            }
+
+            if (showScene)
+            {
+                ImGui::Begin("Scene", &showScene);
+                ImVec2 size = ImGui::GetContentRegionAvail();
+                if (d3d11renderer.m_sceneSRV)
+                    ImGui::Image((ImTextureID)d3d11renderer.m_sceneSRV, size);
+                else
+                    ImGui::TextUnformatted("(Scene texture not available)");
+                ImGui::End();
+            }
+        }      
         {
-            d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_sceneRTV, nullptr);
-            d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_sceneRTV, config.clearColor);
+            if (d3d11renderer.m_sceneRTV)
+            {
+                d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_sceneRTV, nullptr);
+                d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_sceneRTV, config.clearColor);
+            }
+
+            ID3D11DepthStencilView* nullDSV = nullptr;
+
+            float clearColor[4] = { 0.05f, 0.5f, 1.0f, 0.0f };
+            d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_rtv, nullptr);
+            d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_rtv, clearColor);
+
+            ImGui::Render();
+            ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+            d3d11renderer.m_swapChain->Present(1, 0);
         }
-
-        ID3D11DepthStencilView* nullDSV = nullptr;
-
-        float clearColor[4] = { 0.05f, 0.5f, 1.0f, 0.0f };
-        d3d11renderer.m_context->OMSetRenderTargets(1, &d3d11renderer.m_rtv, nullptr);
-        d3d11renderer.m_context->ClearRenderTargetView(d3d11renderer.m_rtv, clearColor);
-
-        ImGui::Render();
-        ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-        d3d11renderer.m_swapChain->Present(1, 0);
     }
 
 
 	Logger::Log("Exiting main loop. Cleaning up and shutting down.");
+	Sleep(100); // Give some time for the log to flush before cleanup
     return 0;
 }
 

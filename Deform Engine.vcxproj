@@ -140,7 +140,9 @@
     <ClCompile Include="src\core\object\Object.cpp" />
     <ClCompile Include="src\core\render\d3d11\DXRender.cpp" />
     <ClCompile Include="src\core\scene\scene.cpp" />
+    <ClCompile Include="src\Editor\src\EditorUIComponents\Console.cpp" />
     <ClCompile Include="src\Editor\src\EditorUIComponents\Hierarchy.cpp" />
+    <ClCompile Include="src\Editor\src\EditorUIComponents\Inspector.cpp" />
     <ClCompile Include="src\Editor\src\EditorUIComponents\MainMenuBar.cpp" />
     <ClCompile Include="src\Editor\src\logger.cpp" />
     <ClCompile Include="src\external\DDSTextureLoader\DDSTextureLoader11.cpp" />
