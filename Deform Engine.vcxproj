@@ -23,6 +23,7 @@
     <ProjectGuid>{320E22EA-00AC-7A8E-974B-A890D399D822}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Engine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -36,13 +37,13 @@
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <EnableUnitySupport>false</EnableUnitySupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
@@ -80,7 +81,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>.\bin\Release\</OutDir>
     <IntDir>.\Intermediate\Release\</IntDir>
-    <TargetName>$(ProjectName)_Release</TargetName>
+    <TargetName>deformEngine</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -94,10 +95,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;DEFORM_ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>src\assets;src\Editor;src\external;src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\external\UUID\include\;src\assets;src\Engine;src\external;src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -121,8 +123,10 @@
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>src\assets;src\Editor;src\external;src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src\Engine;src\external\UUID\include\;src\assets;src\Editor;src\external;src\external\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -136,53 +140,32 @@
     </Xdcmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\maths\vector\Vector.cpp" />
-    <ClCompile Include="src\core\object\Object.cpp" />
-    <ClCompile Include="src\core\render\d3d11\DXRender.cpp" />
-    <ClCompile Include="src\core\scene\scene.cpp" />
-    <ClCompile Include="src\Editor\src\EditorUIComponents\Console.cpp" />
-    <ClCompile Include="src\Editor\src\EditorUIComponents\Hierarchy.cpp" />
-    <ClCompile Include="src\Editor\src\EditorUIComponents\Inspector.cpp" />
-    <ClCompile Include="src\Editor\src\EditorUIComponents\MainMenuBar.cpp" />
-    <ClCompile Include="src\Editor\src\logger.cpp" />
-    <ClCompile Include="src\external\DDSTextureLoader\DDSTextureLoader11.cpp" />
-    <ClCompile Include="src\external\imgui\backends\imgui_impl_dx11.cpp" />
-    <ClCompile Include="src\external\imgui\backends\imgui_impl_glfw.cpp" />
-    <ClCompile Include="src\external\imgui\imgui.cpp" />
-    <ClCompile Include="src\external\imgui\imgui_demo.cpp" />
-    <ClCompile Include="src\external\imgui\imgui_draw.cpp" />
-    <ClCompile Include="src\external\imgui\imgui_tables.cpp" />
-    <ClCompile Include="src\external\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="src\external\imgui\misc\cpp\imgui_stdlib.cpp" />
-    <ClCompile Include="src\graphics\Window.cpp" />
+    <ClCompile Include="src\Engine\core\maths\vector\Vector.cpp" />
+    <ClCompile Include="src\Engine\core\Object\Object.cpp" />
+    <ClCompile Include="src\Engine\core\render\d3d11\DXRender.cpp" />
+    <ClCompile Include="src\Engine\core\scene\scene.cpp" />
+    <ClCompile Include="src\Engine\graphics\Window.cpp" />
+    <ClCompile Include="src\Engine\core\logger.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\external\DDSTextureLoader\DDSTextureLoader11.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\config.h" />
-    <ClInclude Include="src\core\maths\vector\Vector.h" />
-    <ClInclude Include="src\core\object\Object.h" />
-    <ClInclude Include="src\core\object\ObjectFlags.h" />
-    <ClInclude Include="src\core\object\ObjectID.h" />
-    <ClInclude Include="src\core\render\d3d11\DXRender.h" />
-    <ClInclude Include="src\core\scene\scene.h" />
-    <ClInclude Include="src\editor\Editor.h" />
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\Engine\core\maths\vector\Vector.h" />
+    <ClInclude Include="src\Engine\core\Object\Object.h" />
+    <ClInclude Include="src\Engine\core\Object\ObjectFlags.h" />
+    <ClInclude Include="src\Engine\core\Object\ObjectID.h" />
+    <ClInclude Include="src\Engine\core\render\d3d11\DXRender.h" />
+    <ClInclude Include="src\Engine\core\scene\scene.h" />
+    <ClInclude Include="src\Engine\EngineAPI.h" />
+    <ClInclude Include="src\Engine\graphics\Window.h" />
     <ClInclude Include="src\external\DDSTextureLoader\DDSTextureLoader11.h" />
     <ClInclude Include="src\external\glfw\include\glfw\glfw3.h" />
     <ClInclude Include="src\external\glfw\include\glfw\glfw3native.h" />
-    <ClInclude Include="src\external\imgui\backends\imgui_impl_dx11.h" />
-    <ClInclude Include="src\external\imgui\backends\imgui_impl_glfw.h" />
-    <ClInclude Include="src\external\imgui\imconfig.h" />
-    <ClInclude Include="src\external\imgui\imgui.h" />
-    <ClInclude Include="src\external\imgui\imgui_internal.h" />
-    <ClInclude Include="src\external\imgui\imstb_rectpack.h" />
-    <ClInclude Include="src\external\imgui\imstb_textedit.h" />
-    <ClInclude Include="src\external\imgui\imstb_truetype.h" />
-    <ClInclude Include="src\external\imgui\misc\cpp\imgui_stdlib.h" />
-    <ClInclude Include="src\external\imgui\misc\single_file\imgui_single_file.h" />
-    <ClInclude Include="src\graphics\Window.h" />
-    <ClInclude Include="src\init.h" />
+    <ClInclude Include="src\external\UUID\include\UUID\uuid.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\glfw3.dll" />
     <None Include="src\external\glfw\docs\html\build_8md.html" />
     <None Include="src\external\glfw\docs\html\build_guide.html" />
     <None Include="src\external\glfw\docs\html\compat_8md.html" />
@@ -247,16 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="src\external\GLFW\lib-vc2022\glfw3.lib" />
-  </ItemGroup>
-  <ItemGroup>
-    <Font Include="src\assets\Fonts\Roboto-Regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="src\assets\img\Cursor.png" />
-    <Image Include="src\assets\img\sky_cubemap.dds" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="src\assets\shaders\sky.hlsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

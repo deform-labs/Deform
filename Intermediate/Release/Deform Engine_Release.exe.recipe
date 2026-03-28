@@ -2,10 +2,14 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\youssef\3D Objects\Deform_Engine\Deform\bin\Release\Deform Engine_Release.exe</FullPath>
+      <FullPath>C:\Users\youssef\OneDrive\lavori\Deform_Engine\Deform\bin\Release\Deform Engine_Release.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
-  <ContentFiles />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\youssef\OneDrive\lavori\Deform_Engine\Deform\bin\Release\sky.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />
 </Project>
