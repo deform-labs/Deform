@@ -1,7 +1,0 @@
-*.ipch
-*.vsidx
-*.db
-*.db-shm
-*.vsidx
-*.ini
-imgui_debug.txt

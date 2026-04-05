@@ -1,8 +1,8 @@
 #include <GLFW/glfw3.h>
-#include <Engine.h>
 #include "Editor.h"
 #include "../external/imgui/backends/imgui_impl_glfw.h"
 #include "../external/imgui/backends/imgui_impl_dx11.h"
+
 namespace Main
 {
     class EditorApp
@@ -31,9 +31,11 @@ namespace Main
                 ImGui::SetNextWindowPos(viewport->Pos);
                 ImGui::SetNextWindowSize(viewport->Size);
                 ImGui::SetNextWindowViewport(viewport->ID);
+
                 window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
                     ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+
                 ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
                 ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
                 ImGui::Begin("DockSpaceHost", nullptr, window_flags);

@@ -92,6 +92,8 @@ extern "C" {
 
 /* If we are we on Windows, we want a single define for it.
  */
+
+#define WIN32_LEAN_AND_MEAN
 #if !defined(_WIN32) && (defined(__WIN32__) || defined(WIN32) || defined(__MINGW32__))
  #define _WIN32
 #endif /* _WIN32 */

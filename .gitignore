@@ -1,0 +1,10 @@
+*.ipch
+*.vsidx
+*.db
+*.db-shm
+*.vsidx
+*.ini
+build/
+imgui.ini
+*.user
+imgui_debug.txt
