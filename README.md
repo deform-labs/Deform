@@ -24,8 +24,7 @@ Deform/
 │   ├── Engine/         # Core engine (compiled to DLL)
 │   └── Editor/         # Editor application, links engine
 ├── bin/                # Build output
-├── Deform Engine.sln
-└── Deform Engine.vcxproj
+└── CMakeLists.txt
 ```
 
 ---
