@@ -44,13 +44,7 @@ Deform/
    git clone https://github.com/yydev-official/Deform.git
    cd Deform
    ```
-
-2. Open `Deform Engine.sln` in Visual Studio 2022
-
-3. Set configuration to **Debug** or **Release**, platform **x64**
-
-4. Build → Run (`F5`)
-
+2. Start building however you want!
 ---
 
 ## Roadmap
@@ -74,5 +68,3 @@ MIT — do whatever you want with it.
 ## Author
 
 Made by [@yydev-official](https://github.com/yydev-official)
-
-ReadMe Written by claude <3
