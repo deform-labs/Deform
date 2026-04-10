@@ -2,7 +2,7 @@
 
 > A custom-built C++ game engine focused on transformation and deformation systems.
 
-Deform is built to explore low-level engine architecture and real-time object manipulation, demonstrating core concepts behind modern engines — system design, modular architecture, and transformation pipelines. The engine and editor are kept separate: the engine ships as a Windows DLL (`DEFORM_API`) and the editor links against it, keeping the core lean and the tooling flexible.
+Deform is built to explore low-level engine architecture and real-time object manipulation, demonstrating core concepts behind modern engines, system design, modular architecture, and transformation pipelines. The engine and editor are kept separate: the engine ships as a Windows DLL (`DEFORM_API`) and the editor links against it, keeping the core lean and the tooling flexible.
 
 ---
 
