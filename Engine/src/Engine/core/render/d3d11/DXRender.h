@@ -20,23 +20,35 @@ public:
 
     ID3D11VertexShader* m_skyVSBlob = nullptr;
 
-    // IRenderer interface
+    /// Initializes the DirectX 11 renderer with the provided GLFW window.
     bool Initialize(GLFWwindow* hwnd) override;
+    /// Releases all DirectX 11 resources and cleans up the renderer.
     void Shutdown() override;
+    /// Resizes the renderer's swap chain and render targets to match new window dimensions.
     void Resize(unsigned int width, unsigned int height) override;
+    /// Checks if the renderer has been successfully initialized.
     bool IsInitialized() const override;
+    /// Begins a new frame by preparing the back buffer for rendering.
     void BeginFrame(const float clearColor[4]) override;
+    /// Presents the rendered frame to the display.
     void Present() override;
+    /// Returns the GLFW window handle.
     GLFWwindow* GetWindow() const override { return m_window; }
 
-    // D3D11 specific
+    /// Prepares the back buffer render target for rendering.
     void BeginBackbufferPass(const float clearColor[4]) const;
 
+    /// Returns the DirectX 11 device.
     ID3D11Device* GetDevice() const { return m_device; }
+    /// Returns the immediate context for the DirectX 11 device.
     ID3D11DeviceContext* GetContext() const { return m_context; }
+    /// Returns the back buffer render target view.
     ID3D11RenderTargetView* GetBackbufferRenderTargetView() const { return m_rtv; }
+    /// Returns the scene off-screen render target view.
     ID3D11RenderTargetView* GetSceneRenderTargetView() const { return m_sceneRTV; }
+    /// Returns the scene texture shader resource view for ImGui rendering.
     ID3D11ShaderResourceView* GetSceneTextureView() const { return m_sceneSRV; }
+    /// Returns the swap chain interface.
     IDXGISwapChain* GetSwapChain() const { return m_swapChain; }
 
 private:

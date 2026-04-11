@@ -9,7 +9,7 @@
 #include <GLFW/glfw3native.h>
 
 #include "DXRender.h"
-#include "../../../../Engine.h"
+#include "Engine.h"
 
 #include "../IRenderer.h"
 
@@ -18,7 +18,7 @@ using namespace deform;
 namespace
 {
     template <typename T>
-    void ReleaseCOM(T*& resource)
+    void ReleaseCOM(T *&resource)
     {
         if (resource)
         {
@@ -28,7 +28,14 @@ namespace
     }
 }
 
-bool DXRender::Initialize(GLFWwindow* glfwWindow)
+/*
+    initializes the DirectX 11 renderer with the provided GLFW window.
+    sets up the direct3d device, swap chain, render target views, and viewport.
+    also creates an off-screen scene texture for rendering to imgui.
+    returns true if initialization succeeds, false otherwise.
+*/
+
+bool DXRender::Initialize(GLFWwindow *glfwWindow)
 {
     if (!glfwWindow)
     {
@@ -71,8 +78,7 @@ bool DXRender::Initialize(GLFWwindow* glfwWindow)
         &m_swapChain,
         &m_device,
         &featureLevel,
-        &m_context
-    );
+        &m_context);
 
     if (FAILED(hr))
     {
@@ -80,8 +86,8 @@ bool DXRender::Initialize(GLFWwindow* glfwWindow)
         return false;
     }
 
-    ID3D11Texture2D* backBuffer = nullptr;
-    hr = m_swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(&backBuffer));
+    ID3D11Texture2D *backBuffer = nullptr;
+    hr = m_swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void **>(&backBuffer));
     if (FAILED(hr) || !backBuffer)
     {
         Logger::FatalError("Failed to get back buffer from swap chain.");
@@ -146,6 +152,11 @@ bool DXRender::Initialize(GLFWwindow* glfwWindow)
     return true;
 }
 
+/*
+    Releases all DirectX 11 resources and cleans up the renderer.
+    Clears the device context state, then releases the swap chain,
+    device, and all render target views in reverse order of creation.
+*/
 void DXRender::Shutdown()
 {
     if (m_context)
@@ -162,6 +173,11 @@ void DXRender::Shutdown()
     ReleaseCOM(m_swapChain);
 }
 
+/* 
+    Resizes the renderer's swap chain and render targets to match new window dimensions.
+    Recreates the back buffer render target view and scene texture with new dimensions.
+    Called when the window is resized to maintain proper rendering surfaces.
+*/
 void DXRender::Resize(unsigned int width, unsigned int height)
 {
     if (!m_swapChain || !m_device || !m_context || width == 0 || height == 0)
@@ -177,8 +193,8 @@ void DXRender::Resize(unsigned int width, unsigned int height)
     m_context->OMSetRenderTargets(0, nullptr, nullptr);
     m_swapChain->ResizeBuffers(0, width, height, DXGI_FORMAT_UNKNOWN, 0);
 
-    ID3D11Texture2D* backBuffer = nullptr;
-    m_swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(&backBuffer));
+    ID3D11Texture2D *backBuffer = nullptr;
+    m_swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void **>(&backBuffer));
     if (!backBuffer)
     {
         return;
@@ -210,6 +226,11 @@ void DXRender::Resize(unsigned int width, unsigned int height)
     m_device->CreateShaderResourceView(m_sceneTexture, nullptr, &m_sceneSRV);
 }
 
+/*
+    Prepares the back buffer render target for rendering.
+    Sets the back buffer as the active render target and clears it with the specified clear color.
+    This should be called at the beginning of each frame for rendering to the main window.
+*/
 void DXRender::BeginBackbufferPass(const float clearColor[4]) const
 {
     if (!m_context || !m_rtv)
@@ -221,6 +242,11 @@ void DXRender::BeginBackbufferPass(const float clearColor[4]) const
     m_context->ClearRenderTargetView(m_rtv, clearColor);
 }
 
+/* 
+    Presents the rendered frame to the display.
+    Swaps the back buffer with the front buffer to display the rendered content on screen.
+    Blocks until the frame is presented (vsync enabled).
+*/
 void DXRender::Present()
 {
     if (m_swapChain)
@@ -229,11 +255,19 @@ void DXRender::Present()
     }
 }
 
+/* 
+    Begins a new frame by preparing the back buffer for rendering.
+    Clears the back buffer with the specified color in preparation for drawing.
+*/
 void DXRender::BeginFrame(const float clearColor[4])
 {
     BeginBackbufferPass(clearColor);
 }
 
+/* 
+    Checks if the renderer has been successfully initialized.
+    Returns true if the renderer is ready for rendering, false otherwise.
+*/
 bool DXRender::IsInitialized() const
 {
     return m_window != nullptr;

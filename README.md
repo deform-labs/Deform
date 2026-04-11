@@ -54,7 +54,7 @@ Deform/
 - [x] Editor panel system (`Editor::UI`)
 - [ ] Scene graph and entity system
 - [ ] Asset pipeline (mesh, texture import)
-- [ ] Vulkan backend via RHI abstraction layer
+- [x] Vulkan backend via RHI abstraction layer
 - [ ] Scripting layer
 
 ---

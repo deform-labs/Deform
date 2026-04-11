@@ -1,178 +1,200 @@
+//header files
 #include <GLFW/glfw3.h>
-
-#include "Editor.h"
-
 #include "../external/imgui/backends/imgui_impl_glfw.h"
 #include "../external/imgui/backends/imgui_impl_dx11.h"
-
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+#include "Editor.h"
 
-namespace Main
+Window m_window; // The Application window class, responsible for creating and managing the GLFW window and its associated graphics API context.
+DXRender m_renderer; // The DirectX 11 renderer class, responsible for initializing DirectX, creating the swap chain and render target views, and handling rendering operations.
+Editor::UIState m_state; // A struct that holds the state of the editor's UI, including which panels are visible and the clear color for the scene.
+
+// Callback for when the window is resized. Resizes the renderer's backbuffer to match the new window size.
+void FramebufferSizeCallback(GLFWwindow *window, int width, int height)
 {
-    class EditorApp
+    m_renderer.Resize(static_cast<unsigned int>(width), static_cast<unsigned int>(height));
+};
+
+// Clean up resources and shut down the application.
+void Shutdown()
+{
+    if (ImGui::GetCurrentContext())
     {
-    public:
-        int Run()
-        {
-            if (!Initialize())
-            {
-                deform::Logger::FatalError("Application initialization failed.");
-                return -1;
-            }
+        ImGui_ImplDX11_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+    }
 
-            Editor::UIState state;
-            while (!m_window.ShouldClose())
-            {
-                m_window.PollEvents();
+    if (m_renderer.IsInitialized())
+        m_renderer.Shutdown();
 
-                ImGui_ImplDX11_NewFrame();
-                ImGui_ImplGlfw_NewFrame();
-                ImGui::NewFrame();
-                ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
-                ImGuiViewport* viewport = ImGui::GetMainViewport();
-                ImGui::SetNextWindowPos(viewport->Pos);
-                ImGui::SetNextWindowSize(viewport->Size);
-                ImGui::SetNextWindowViewport(viewport->ID);
+    m_window.Destroy();
+    glfwTerminate();
+}
 
-                window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
+// Update the editor panels based on the current UI state.
+void UpdatePanels()
+{
+    Editor::UI::MainBar::UpdateMainBar(m_state);
+
+    if (m_state.showHierarchy)
+        Editor::UI::Hierarchy::UpdateHierarchy();
+    if (m_state.showInspector)
+        Editor::UI::Inspector::UpdateInspector();
+    if (m_state.showConsole)
+        Editor::UI::Console::UpdateConsole();
+    if (m_state.showScene)
+    {
+        ImGui::Begin("Scene", &m_state.showScene);
+        ImVec2 size = ImGui::GetContentRegionAvail();
+        if (m_renderer.m_sceneSRV)
+            ImGui::Image((ImTextureID)m_renderer.m_sceneSRV, size);
+        else
+            ImGui::TextUnformatted("(Scene texture not available)");
+        ImGui::End();
+    }
+};
+
+// Update the full-screen dockspace for the editor panels.
+void UpdateDockHost()
+{
+    ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+    ImGuiViewport *viewport = ImGui::GetMainViewport();
+    ImGui::SetNextWindowPos(viewport->Pos);
+    ImGui::SetNextWindowSize(viewport->Size);
+    ImGui::SetNextWindowViewport(viewport->ID);
+
+    window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
                     ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
 
-                ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
-                ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
 
-                ImGui::Begin("DockSpaceHost", nullptr, window_flags);
-                ImGui::PopStyleVar(2);
-                ImGui::DockSpace(ImGui::GetID("MainDockSpace"));
-                ImGui::End();
+    ImGui::Begin("DockSpaceHost", nullptr, window_flags);
+    ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
+    ImGui::PopStyleVar(2);
+    ImGui::DockSpace(ImGui::GetID("MainDockSpace"));
+    ImGui::End();
+};
 
-                Editor::UI::MainBar::UpdateMainBar(state);
+// Create the renderer and initialize it with the window's handle. Logs an error and shuts down if initialization fails.
+bool CreateRenderer()
+{
+    bool d3d11 = m_renderer.Initialize(m_window.GetWindow());
+    if (!d3d11)
+    {
+        deform::Logger::FatalError("Renderer initialization failed.");
+        Shutdown();
+        return false;
+    }
 
-                if (state.showHierarchy)
-                    Editor::UI::Hierarchy::UpdateHierarchy();
-                if (state.showInspector)
-                    Editor::UI::Inspector::UpdateInspector();
-                if (state.showConsole)
-                    Editor::UI::Console::UpdateConsole();
-                if (state.showScene)
-                {
-                    ImGui::Begin("Scene", &state.showScene);
-                    ImVec2 size = ImGui::GetContentRegionAvail();
-                    if (m_renderer.m_sceneSRV)
-                        ImGui::Image((ImTextureID)m_renderer.m_sceneSRV, size);
-                    else
-                        ImGui::TextUnformatted("(Scene texture not available)");
-                    ImGui::End();
-                }
+    return d3d11;
+};
 
-                ImGui::SetNextWindowPos(ImVec2(8.0f, 8.0f), ImGuiCond_Always);
-                ImGui::SetNextWindowBgAlpha(0.35f);
+// Create the editor window with the specified title and graphics API. Logs an error and shuts down if creation fails.
+bool CreateEditorWindow(const char *WindowTitle, WindowGraphicsAPI api = WindowGraphicsAPI::DX11)
+{
+    bool CreatedWindow = m_window.Create(WindowTitle, "Window_Icon.png", 1920, 1080, api);
 
-                ImGui::Begin("##fps", nullptr,
-                    ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoDocking |
-                    ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings |
-                    ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav |
-                    ImGuiWindowFlags_NoMove);
-                ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
-                ImGui::End();
+    if (!CreatedWindow)
+    {
+        deform::Logger::FatalError("Window failed");
+        return false;
+    }
 
-                m_renderer.m_context->OMSetRenderTargets(0, &m_renderer.m_rtv, nullptr);
-                m_renderer.BeginFrame(state.clearColor);
-                m_renderer.BeginBackbufferPass(state.clearColor);
-                ImGui::Render();
-                ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-                m_renderer.Present();
-            }
-            Shutdown();
-            return 0;
-        }
-    private:
-        bool Initialize()
-        {
-            bool Window = m_window.Create("Deform Editor", 1920, 1080, WindowGraphicsAPI::NoAPI);
-            bool d3d11 = m_renderer.Initialize(m_window.GetWindow());
-            GLFWwindow* CreatedWindow = m_window.GetWindow();
-
-            int w, h, channels;
-            unsigned char* pixels = stbi_load("Window_Icon.png", &w, &h, &channels, 4); // force RGBA
-            if (!pixels) 
-            {
-                deform::Logger::Log("Failed to load window icon.");
-            };
-
-            GLFWimage icon;
-            icon.width  = w;
-            icon.height = h;
-            icon.pixels = pixels;
-
-            glfwSetWindowIcon(CreatedWindow, 1, &icon);
-            stbi_image_free(pixels);
-
-            glfwSetWindowUserPointer(CreatedWindow, this);
-            glfwSetFramebufferSizeCallback(CreatedWindow,
-                [](GLFWwindow* window, int width, int height)
-                {
-                    auto* app = static_cast<EditorApp*>(glfwGetWindowUserPointer(window));
-                    if (app)
-                        app->m_renderer.Resize((UINT)width, (UINT)height);
-                });
-
-            if (!CreatedWindow)
-            {
-                deform::Logger::FatalError("Window failed");
-                return false;
-            }
-            if (!d3d11)
-            {
-                deform::Logger::FatalError("Renderer initialization failed.");
-                Shutdown();
-                return false;
-            }
-
-            IMGUI_CHECKVERSION();
-            ImGui::CreateContext();
-            ImGuiIO& io = ImGui::GetIO();
-            io.ConfigFlags = ImGuiConfigFlags_DockingEnable;
-
-            bool ImGuiGlfwInitialized = ImGui_ImplGlfw_InitForOpenGL(m_window.GetWindow(), true);
-            bool ImguiDX11Initialized = ImGui_ImplDX11_Init(m_renderer.m_device, m_renderer.m_context);
-            if (!ImGuiGlfwInitialized)
-            {
-                deform::Logger::FatalError("ImGui GLFW backend initialization failed.");
-                Shutdown();
-                return false;
-            }
-            if (!ImguiDX11Initialized)
-            {
-                deform::Logger::FatalError("ImGui DX11 backend initialization failed.");
-                Shutdown();
-                return false;
-            }
-            deform::Logger::Log("ImGui GLFW backend initialized successfully.");
-            deform::Logger::Log("ImGui DX11 backend initialized successfully.");
-            return true;
-        }
-        void Shutdown()
-        {
-            if (ImGui::GetCurrentContext())
-            {
-                ImGui_ImplDX11_Shutdown();
-                ImGui_ImplGlfw_Shutdown();
-                ImGui::DestroyContext();
-            }
-            if (m_renderer.IsInitialized())
-                m_renderer.Shutdown();
-            m_window.Destroy();
-            glfwTerminate();
-        }
-        Window m_window;
-        DXRender m_renderer;
-        Editor::UIState m_state;
-    };
+    deform::Logger::Log("Window " + std::string(WindowTitle) + " created successfully.");
+    return CreatedWindow;
 }
+
+// Initialize ImGui with the appropriate backends for the windowing system and graphics API. Logs errors and shuts down if initialization fails.
+bool InitializeImGui()
+{
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO &io = ImGui::GetIO();
+    io.ConfigFlags = ImGuiConfigFlags_DockingEnable;
+
+    bool ImGuiGlfwInitialized = ImGui_ImplGlfw_InitForOther(m_window.GetWindow(), true);
+    bool ImguiDX11Initialized = ImGui_ImplDX11_Init(m_renderer.GetDevice(), m_renderer.GetContext());
+    if (!ImGuiGlfwInitialized)
+    {
+        deform::Logger::FatalError("ImGui GLFW backend initialization failed.");
+        Shutdown();
+        return false;
+    }
+    if (!ImguiDX11Initialized)
+    {
+        deform::Logger::FatalError("ImGui DX11 backend initialization failed.");
+        Shutdown();
+        return false;
+    }
+    deform::Logger::Log("ImGui GLFW backend initialized successfully.");
+    deform::Logger::Log("ImGui DX11 backend initialized successfully.");
+
+    return true;
+}
+
+// Initialize the application by creating the editor window, initializing the renderer, setting up the framebuffer resize callback, and initializing ImGui. Logs errors and shuts down if any step fails.
+bool Initialize()
+{
+    
+    if (!CreateEditorWindow("Deform Editor", WindowGraphicsAPI::DX11))
+    {
+        return false;
+    }
+
+    if (!CreateRenderer())
+    {
+        return false;
+    }
+
+    glfwSetFramebufferSizeCallback(m_window.GetWindow(), FramebufferSizeCallback);
+
+    if (!InitializeImGui())
+    {
+        return false;
+    }
+
+    return true;
+}
+
+// Main application loop. Polls for events, updates the UI panels, renders the scene and UI, and presents the backbuffer. Cleans up resources on exit.
+int Run()
+{
+    if (!Initialize())
+    {
+        deform::Logger::FatalError("Application initialization failed.");
+        return -1;
+    }
+
+    while (!m_window.ShouldClose())
+    {
+        m_window.PollEvents();
+
+        ImGui_ImplDX11_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        UpdateDockHost();
+        UpdatePanels();
+
+        m_renderer.m_context->OMSetRenderTargets(0, &m_renderer.m_rtv, nullptr);
+        m_renderer.BeginFrame(m_state.clearColor);
+        m_renderer.BeginBackbufferPass(m_state.clearColor);
+        ImGui::Render();
+        ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+        m_renderer.Present();
+    }
+    
+    Shutdown();
+    return 0;
+}
+
+//Entry point of the application. Calls the main application loop and returns its exit code.
 int main()
 {
-    Main::EditorApp app;
-    return app.Run();
+    int Running = Run();
+    return Running;
 }

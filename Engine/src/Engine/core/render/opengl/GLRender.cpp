@@ -5,6 +5,11 @@
 
 using namespace deform;
 
+/* 
+    Initializes the OpenGL renderer with the provided GLFW window.
+    Makes the window's OpenGL context current, enables vsync, and sets up the viewport.
+    Returns true if initialization succeeds, false otherwise.
+*/
 bool GLRender::Initialize(GLFWwindow* window)
 {
     if (!window)
@@ -26,6 +31,10 @@ bool GLRender::Initialize(GLFWwindow* window)
     return true;
 }
 
+/* 
+    Releases OpenGL resources and cleans up the renderer.
+    Detaches the OpenGL context from the current thread if it was active.
+*/
 void GLRender::Shutdown()
 {
     if (glfwGetCurrentContext() == m_window)
@@ -36,6 +45,10 @@ void GLRender::Shutdown()
     m_window = nullptr;
 }
 
+/* 
+    Resizes the OpenGL viewport to match new window dimensions.
+    Should be called when the window is resized to maintain proper rendering aspect ratio.
+*/
 void GLRender::Resize(unsigned int width, unsigned int height)
 {
     if (!m_window)
@@ -45,6 +58,10 @@ void GLRender::Resize(unsigned int width, unsigned int height)
     glViewport(0, 0, width, height);
 }
 
+/* 
+    Begins a new frame by making the OpenGL context current and clearing the buffer.
+    Sets the viewport and clears the color buffer with the specified clear color.
+*/
 void GLRender::BeginFrame(const float clearColor[4])
 {
     if (!m_window)
@@ -60,6 +77,9 @@ void GLRender::BeginFrame(const float clearColor[4])
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
+/* 
+    Presents the rendered frame to the display by swapping the front and back buffers.
+*/
 void GLRender::Present()
 {
     if (m_window)
@@ -68,6 +88,10 @@ void GLRender::Present()
     }
 }
 
+/* 
+    Checks if the renderer has been successfully initialized.
+    Returns true if the renderer is ready for rendering, false otherwise.
+*/
 bool GLRender::IsInitialized() const
 {
     return m_window != nullptr;

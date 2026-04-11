@@ -8,7 +8,7 @@
             "program": "${workspaceFolder}/build/Editor/Editor.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}/build/Editor",
             "environment": [],
             "console": "externalTerminal"
         }

@@ -10,6 +10,10 @@
 
 using namespace deform;
 
+/* 
+    Destructor for the Vulkan renderer.
+    Ensures all Vulkan resources are properly cleaned up on destruction.
+*/
 VKRender::~VKRender()
 {
     if (m_initialized)
@@ -18,6 +22,12 @@ VKRender::~VKRender()
     }
 }
 
+/* 
+    Initializes the Vulkan renderer with the provided GLFW window.
+    Sets up the Vulkan instance, selects a physical device, creates a logical device,
+    configures the surface and swapchain, and creates synchronization primitives.
+    Returns true if initialization succeeds, false otherwise.
+*/
 bool VKRender::Initialize(GLFWwindow* window)
 {
     if (!window)
@@ -92,6 +102,11 @@ bool VKRender::Initialize(GLFWwindow* window)
     return true;
 }
 
+/* 
+    Releases all Vulkan resources and cleans up the renderer.
+    Waits for the device to become idle, destroys swapchain and synchronization objects,
+    then destroys the logical device, surface, and instance.
+*/
 void VKRender::Shutdown()
 {
     if (!m_initialized)
@@ -132,6 +147,11 @@ void VKRender::Shutdown()
     m_initialized = false;
 }
 
+/* 
+    Begins a new frame by acquiring the next swapchain image for rendering.
+    Waits for the current frame's in-flight fence to be signaled and acquires 
+    the next image from the swapchain to prepare for rendering.
+*/
 void VKRender::BeginFrame(const float clearColor[4])
 {
     if (!m_initialized)
@@ -165,6 +185,11 @@ void VKRender::BeginFrame(const float clearColor[4])
     vkResetFences(m_device, 1, &m_inFlightFences[m_currentFrame]);
 }
 
+/* 
+    Presents the rendered frame to the display via the swapchain.
+    Submits the presentation request to the graphics queue and handles swapchain recreation
+    if necessary due to out-of-date or suboptimal conditions.
+*/
 void VKRender::Present()
 {
     if (!m_initialized)
@@ -195,6 +220,12 @@ void VKRender::Present()
     m_currentFrame = (m_currentFrame + 1) % MAX_FRAMES_IN_FLIGHT;
 }
 
+/* 
+    Resizes the swapchain and rendering resources to match new window dimensions.
+    Recreates the swapchain with the new dimensions to maintain proper rendering surfaces.
+    Resizes the swapchain and rendering resources to match new window dimensions.
+    Recreates the swapchain with the new dimensions to maintain proper rendering surfaces.
+*/
 void VKRender::Resize(unsigned int width, unsigned int height)
 {
     if (!m_initialized || width == 0 || height == 0)
@@ -207,11 +238,19 @@ void VKRender::Resize(unsigned int width, unsigned int height)
     CreateImageViews();
 }
 
+/* 
+    Checks if the renderer has been successfully initialized.
+    Returns true if the renderer is ready for rendering, false otherwise.
+*/
 bool VKRender::IsInitialized() const
 {
     return m_initialized;
 }
 
+/* 
+    Creates the Vulkan instance with required extensions for GLFW.
+    The instance is needed to interact with the Vulkan loader and ICD.
+*/
 bool VKRender::CreateInstance()
 {
     VkApplicationInfo appInfo{};
@@ -239,6 +278,12 @@ bool VKRender::CreateInstance()
     return true;
 }
 
+/* 
+    Selects a suitable physical device (GPU) from available devices.
+    Queries for graphics and presentation queue families to ensure the device supports required operations.
+    Selects a suitable physical device (GPU) from available devices.
+    Queries for graphics and presentation queue families to ensure the device supports required operations.
+*/
 bool VKRender::SelectPhysicalDevice()
 {
     uint32_t deviceCount = 0;
@@ -285,6 +330,12 @@ bool VKRender::SelectPhysicalDevice()
     return m_graphicsQueueFamilyIndex != UINT32_MAX && m_presentQueueFamilyIndex != UINT32_MAX;
 }
 
+/* 
+    Creates a logical device for interacting with the selected physical device.
+    Sets up command queues for graphics and presentation operations.
+    Creates a logical device for interacting with the selected physical device.
+    Sets up command queues for graphics and presentation operations.
+*/
 bool VKRender::CreateLogicalDevice()
 {
     std::set<uint32_t> uniqueQueueFamilies = {m_graphicsQueueFamilyIndex, m_presentQueueFamilyIndex};
@@ -321,8 +372,14 @@ bool VKRender::CreateLogicalDevice()
     vkGetDeviceQueue(m_device, m_graphicsQueueFamilyIndex, 0, &m_graphicsQueue);
 
     return true;
+/// Creates a Vulkan surface from the GLFW window.
+/// The surface is needed to determine which images can be presented to the window.
 }
 
+/* 
+    Creates a Vulkan surface from the GLFW window.
+    The surface is needed to determine which images can be presented to the window.
+*/
 bool VKRender::CreateSurface()
 {
     if (glfwCreateWindowSurface(m_instance, m_window, nullptr, &m_surface) != VK_SUCCESS)
@@ -333,6 +390,16 @@ bool VKRender::CreateSurface()
     return true;
 }
 
+/* 
+    Creates the swapchain for presenting rendered images to the window.
+
+    Selects appropriate surface format and presentation mode, and creates swapchain images.
+    Populates the swapchain extent based on surface capabilities.
+
+    Creates the swapchain for presenting rendered images to the window.
+    Selects appropriate surface format and presentation mode, and creates swapchain images.
+    Populates the swapchain extent based on surface capabilities.
+*/
 bool VKRender::CreateSwapchain()
 {
     VkSurfaceCapabilitiesKHR capabilities;
@@ -424,11 +491,17 @@ bool VKRender::CreateSwapchain()
     vkGetSwapchainImagesKHR(m_device, m_swapchain, &swapchainImageCount, nullptr);
 
     m_swapchainImages.resize(swapchainImageCount);
+/// Creates image views for all swapchain images.
+/// Image views are needed to access and use the swapchain images in rendering operations.
     vkGetSwapchainImagesKHR(m_device, m_swapchain, &swapchainImageCount, m_swapchainImages.data());
 
     return true;
 }
 
+/* 
+    Creates image views for all swapchain images.
+    Image views are needed to access and use the swapchain images in rendering operations.
+*/
 bool VKRender::CreateImageViews()
 {
     m_swapchainImageViews.resize(m_swapchainImages.size());
@@ -454,11 +527,17 @@ bool VKRender::CreateImageViews()
         {
             return false;
         }
+/// Creates synchronization primitives (semaphores and fences) for frame synchronization.
+/// Ensures proper ordering of GPU operations and synchronization with the CPU.
     }
 
     return true;
 }
 
+/* 
+    Creates synchronization primitives (semaphores and fences) for frame synchronization.
+    Ensures proper ordering of GPU operations and synchronization with the CPU.
+*/
 bool VKRender::CreateSyncObjects()
 {
     m_imageAvailableSemaphores.resize(MAX_FRAMES_IN_FLIGHT);
@@ -479,12 +558,15 @@ bool VKRender::CreateSyncObjects()
             vkCreateFence(m_device, &fenceInfo, nullptr, &m_inFlightFences[i]) != VK_SUCCESS)
         {
             return false;
+/// Destroys the swapchain and releases associated resources.
         }
     }
 
     return true;
 }
 
+ 
+// Destroys the swapchain and releases associated resources.
 void VKRender::DestroySwapchain()
 {
     if (m_swapchain != VK_NULL_HANDLE)
@@ -495,6 +577,7 @@ void VKRender::DestroySwapchain()
     m_swapchainImages.clear();
 }
 
+// Destroys all swapchain image views.
 void VKRender::DestroyImageViews()
 {
     for (auto imageView : m_swapchainImageViews)
@@ -507,6 +590,7 @@ void VKRender::DestroyImageViews()
     m_swapchainImageViews.clear();
 }
 
+// Destroys the logical device and releases its resources.
 void VKRender::DestroyLogicalDevice()
 {
     if (m_device != VK_NULL_HANDLE)
@@ -516,6 +600,7 @@ void VKRender::DestroyLogicalDevice()
     }
 }
 
+// Destroys the Vulkan instance and releases all associated resources.
 void VKRender::DestroyInstance()
 {
     if (m_instance != VK_NULL_HANDLE)
