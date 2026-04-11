@@ -16,13 +16,7 @@ namespace Main
             while (!m_window.ShouldClose())
             {
                 m_window.PollEvents();
-                if (m_renderer.m_sceneRTV)
-                {
-                    m_renderer.m_context->OMSetRenderTargets(1, &m_renderer.m_sceneRTV, nullptr);
-                    m_renderer.m_context->ClearRenderTargetView(m_renderer.m_sceneRTV, state.clearColor);
-                }
-                m_renderer.m_context->OMSetRenderTargets(1, &m_renderer.m_rtv, nullptr);
-                m_renderer.m_context->ClearRenderTargetView(m_renderer.m_rtv, state.clearColor);
+
                 ImGui_ImplDX11_NewFrame();
                 ImGui_ImplGlfw_NewFrame();
                 ImGui::NewFrame();
@@ -38,11 +32,14 @@ namespace Main
 
                 ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
                 ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+
                 ImGui::Begin("DockSpaceHost", nullptr, window_flags);
                 ImGui::PopStyleVar(2);
                 ImGui::DockSpace(ImGui::GetID("MainDockSpace"));
                 ImGui::End();
+
                 Editor::UI::MainBar::UpdateMainBar(state);
+
                 if (state.showHierarchy)
                     Editor::UI::Hierarchy::UpdateHierarchy();
                 if (state.showInspector)
@@ -59,8 +56,10 @@ namespace Main
                         ImGui::TextUnformatted("(Scene texture not available)");
                     ImGui::End();
                 }
+
                 ImGui::SetNextWindowPos(ImVec2(8.0f, 8.0f), ImGuiCond_Always);
                 ImGui::SetNextWindowBgAlpha(0.35f);
+
                 ImGui::Begin("##fps", nullptr,
                     ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoDocking |
                     ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoSavedSettings |
@@ -68,19 +67,23 @@ namespace Main
                     ImGuiWindowFlags_NoMove);
                 ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
                 ImGui::End();
-                m_renderer.m_context->OMSetRenderTargets(1, &m_renderer.m_rtv, nullptr);
+
+                m_renderer.m_context->OMSetRenderTargets(0, &m_renderer.m_rtv, nullptr);
+                m_renderer.m_context->ClearRenderTargetView(m_renderer.m_rtv, state.clearColor);
                 ImGui::Render();
                 ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
-                m_renderer.m_swapChain->Present(1, 0);
+                m_renderer.Present();
             }
             Shutdown();
             return 0;
         }
-    private:
+
         bool Initialize()
         {
             bool Window = m_window.Create("Deform Editor", 1280, 720, WindowGraphicsAPI::NoAPI);
+            bool d3d11 = m_renderer.Initialize(m_window.GetWindow());
             GLFWwindow* CreatedWindow = m_window.GetWindow();
+
             glfwSetWindowUserPointer(CreatedWindow, this);
             glfwSetFramebufferSizeCallback(CreatedWindow,
                 [](GLFWwindow* window, int width, int height)
@@ -89,12 +92,13 @@ namespace Main
                     if (app)
                         app->m_renderer.Resize((UINT)width, (UINT)height);
                 });
-            if (!Window)
+
+            if (!CreatedWindow)
             {
                 deform::Logger::FatalError("Window failed");
                 return false;
             }
-            if (!m_renderer.Initialize(m_window.GetWindow()))
+            if (!d3d11)
             {
                 deform::Logger::FatalError("Renderer initialization failed.");
                 Shutdown();
@@ -106,23 +110,28 @@ namespace Main
             io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
             ImGui::StyleColorsDark();
             bool ImGuiGlfwInitialized = ImGui_ImplGlfw_InitForOther(m_window.GetWindow(), true);
-            bool ImguiDX11Initialized = ImGui_ImplDX11_Init(m_renderer.GetDevice(), m_renderer.GetContext());
+            //bool ImguiDX11Initialized = ImGui_ImplDX11_Init(m_renderer.GetDevice(), m_renderer.GetContext());
             if (!ImGuiGlfwInitialized)
             {
                 deform::Logger::FatalError("ImGui GLFW backend initialization failed.");
                 Shutdown();
                 return false;
             }
+            /*
+            
             if (!ImguiDX11Initialized)
             {
                 deform::Logger::FatalError("ImGui DX11 backend initialization failed.");
                 Shutdown();
                 return false;
             }
+                
+            */
             deform::Logger::Log("ImGui GLFW backend initialized successfully.");
             deform::Logger::Log("ImGui DX11 backend initialized successfully.");
             return true;
         }
+    private:
         void Shutdown()
         {
             if (ImGui::GetCurrentContext())
@@ -144,5 +153,6 @@ namespace Main
 int main()
 {
     Main::EditorApp app;
+    app.Initialize();
     return app.Run();
 }
