@@ -8,7 +8,7 @@
 
 #include "Engine/core/render/d3d11/DXRender.h"
 #include "Engine/core/render/opengl/GLRender.h"
-#include "Engine/core/render/vulkan/VKRender.h"
+//#include "Engine/core/render/vulkan/VKRender.h"  // VKRender requires Vulkan SDK
 
 #include "Engine/graphics/Window.h"
 

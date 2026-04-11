@@ -1,6 +1,10 @@
 #include "VKRender.h"
 #include "../../../../Engine.h"
+
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include <GLFW/glfw3native.h>
+
 #include <algorithm>
 #include <set>
 
@@ -375,10 +379,10 @@ bool VKRender::CreateSwapchain()
         m_swapchainExtent.height = std::clamp(static_cast<uint32_t>(height), capabilities.minImageExtent.height, capabilities.maxImageExtent.height);
     }
 
-    uint32_t imageCount = std::max(capabilities.minImageCount, 2u);
+    uint32_t imageCount = (std::max)(capabilities.minImageCount, 2u);
     if (capabilities.maxImageCount > 0)
     {
-        imageCount = std::min(imageCount, capabilities.maxImageCount);
+        imageCount = (std::min)(imageCount, capabilities.maxImageCount);
     }
 
     VkSwapchainCreateInfoKHR createInfo{};

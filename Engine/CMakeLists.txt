@@ -4,6 +4,7 @@ file(GLOB_RECURSE ENGINE_SOURCES
     "src/*.h"
 )
 
+find_package(Vulkan)  # Optional - only needed if using VKRender
 add_library(Engine SHARED ${ENGINE_SOURCES})
 
 target_include_directories(Engine PUBLIC
@@ -11,17 +12,24 @@ target_include_directories(Engine PUBLIC
     external/GLFW/include
     external/UUID/include
     external/DDSTextureLoader
+    external
 )
 
-find_package(Vulkan REQUIRED)
+if(Vulkan_FOUND)
+    target_include_directories(Engine PUBLIC ${Vulkan_INCLUDE_DIRS})
+endif()
+
 target_link_libraries(Engine PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/external/GLFW/lib-vc2022/glfw3.lib"
     d3d11.lib
     dxgi.lib
     d3dcompiler.lib
     opengl32.lib
-    Vulkan::Vulkan
 )
+
+if(Vulkan_FOUND)
+    target_link_libraries(Engine PRIVATE Vulkan::Vulkan)
+endif()
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/Engine/$<CONFIG>/Runtime)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/Engine/$<CONFIG>/Library)

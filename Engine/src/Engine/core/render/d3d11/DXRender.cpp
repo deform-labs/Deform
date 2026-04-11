@@ -1,13 +1,12 @@
-#define GLFW_EXPOSE_NATIVE_WIN32
-
-#include <GLFW/glfw3.h>
-#include <GLFW/glfw3native.h>
-
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
 #include <d3d11.h>
 #include <dxgi.h>
+
+#define GLFW_EXPOSE_NATIVE_WIN32
+#include <GLFW/glfw3.h>
+#include <GLFW/glfw3native.h>
 
 #include "DXRender.h"
 #include "../../../../Engine.h"

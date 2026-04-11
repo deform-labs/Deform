@@ -1,6 +1,8 @@
 #pragma once
 
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
+#include <GLFW/glfw3native.h>
 #include <Engine/EngineAPI.h>
 #include <Engine/core/render/IRenderer.h>
 #include <vulkan/vulkan.h>

@@ -1,7 +1,12 @@
 #include <GLFW/glfw3.h>
+
 #include "Editor.h"
+
 #include "../external/imgui/backends/imgui_impl_glfw.h"
 #include "../external/imgui/backends/imgui_impl_dx11.h"
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 namespace Main
 {
@@ -11,7 +16,11 @@ namespace Main
         int Run()
         {
             if (!Initialize())
+            {
+                deform::Logger::FatalError("Application initialization failed.");
                 return -1;
+            }
+
             Editor::UIState state;
             while (!m_window.ShouldClose())
             {
@@ -69,7 +78,8 @@ namespace Main
                 ImGui::End();
 
                 m_renderer.m_context->OMSetRenderTargets(0, &m_renderer.m_rtv, nullptr);
-                m_renderer.m_context->ClearRenderTargetView(m_renderer.m_rtv, state.clearColor);
+                m_renderer.BeginFrame(state.clearColor);
+                m_renderer.BeginBackbufferPass(state.clearColor);
                 ImGui::Render();
                 ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
                 m_renderer.Present();
@@ -77,12 +87,27 @@ namespace Main
             Shutdown();
             return 0;
         }
-
+    private:
         bool Initialize()
         {
-            bool Window = m_window.Create("Deform Editor", 1280, 720, WindowGraphicsAPI::NoAPI);
+            bool Window = m_window.Create("Deform Editor", 1920, 1080, WindowGraphicsAPI::NoAPI);
             bool d3d11 = m_renderer.Initialize(m_window.GetWindow());
             GLFWwindow* CreatedWindow = m_window.GetWindow();
+
+            int w, h, channels;
+            unsigned char* pixels = stbi_load("Window_Icon.png", &w, &h, &channels, 4); // force RGBA
+            if (!pixels) 
+            {
+                deform::Logger::Log("Failed to load window icon.");
+            };
+
+            GLFWimage icon;
+            icon.width  = w;
+            icon.height = h;
+            icon.pixels = pixels;
+
+            glfwSetWindowIcon(CreatedWindow, 1, &icon);
+            stbi_image_free(pixels);
 
             glfwSetWindowUserPointer(CreatedWindow, this);
             glfwSetFramebufferSizeCallback(CreatedWindow,
@@ -104,34 +129,30 @@ namespace Main
                 Shutdown();
                 return false;
             }
+
             IMGUI_CHECKVERSION();
             ImGui::CreateContext();
             ImGuiIO& io = ImGui::GetIO();
-            io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-            ImGui::StyleColorsDark();
-            bool ImGuiGlfwInitialized = ImGui_ImplGlfw_InitForOther(m_window.GetWindow(), true);
-            //bool ImguiDX11Initialized = ImGui_ImplDX11_Init(m_renderer.GetDevice(), m_renderer.GetContext());
+            io.ConfigFlags = ImGuiConfigFlags_DockingEnable;
+
+            bool ImGuiGlfwInitialized = ImGui_ImplGlfw_InitForOpenGL(m_window.GetWindow(), true);
+            bool ImguiDX11Initialized = ImGui_ImplDX11_Init(m_renderer.m_device, m_renderer.m_context);
             if (!ImGuiGlfwInitialized)
             {
                 deform::Logger::FatalError("ImGui GLFW backend initialization failed.");
                 Shutdown();
                 return false;
             }
-            /*
-            
             if (!ImguiDX11Initialized)
             {
                 deform::Logger::FatalError("ImGui DX11 backend initialization failed.");
                 Shutdown();
                 return false;
             }
-                
-            */
             deform::Logger::Log("ImGui GLFW backend initialized successfully.");
             deform::Logger::Log("ImGui DX11 backend initialized successfully.");
             return true;
         }
-    private:
         void Shutdown()
         {
             if (ImGui::GetCurrentContext())
@@ -153,6 +174,5 @@ namespace Main
 int main()
 {
     Main::EditorApp app;
-    app.Initialize();
     return app.Run();
 }

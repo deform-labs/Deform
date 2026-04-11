@@ -14,6 +14,7 @@ set(IMGUI_SOURCES
 add_executable(Editor ${EDITOR_SOURCES} ${IMGUI_SOURCES})
 
 target_include_directories(Editor PRIVATE
+    ${CMAKE_SOURCE_DIR}/assets
     src
     external/imgui
     external/imgui/backends
@@ -31,5 +32,11 @@ target_link_libraries(Editor PRIVATE
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/Editor/$<CONFIG>/Runtime)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/Editor/$<CONFIG>/Library)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/Editor/$<CONFIG>/Archive)
+
+# Copy Engine.dll to Editor folder after build
+add_custom_command(TARGET Editor POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:Engine>" "$<TARGET_FILE_DIR:Editor>/Engine.dll"
+    COMMENT "Copying Engine.dll to Editor directory"
+)
 
 set_property(TARGET Editor PROPERTY CXX_STANDARD 23)
