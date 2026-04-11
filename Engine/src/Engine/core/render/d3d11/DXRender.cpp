@@ -12,6 +12,8 @@
 #include "DXRender.h"
 #include "../../../../Engine.h"
 
+#include "../IRenderer.h"
+
 using namespace deform;
 
 namespace
@@ -161,7 +163,7 @@ void DXRender::Shutdown()
     ReleaseCOM(m_swapChain);
 }
 
-void DXRender::Resize(UINT width, UINT height)
+void DXRender::Resize(unsigned int width, unsigned int height)
 {
     if (!m_swapChain || !m_device || !m_context || width == 0 || height == 0)
     {
@@ -220,12 +222,17 @@ void DXRender::BeginBackbufferPass(const float clearColor[4]) const
     m_context->ClearRenderTargetView(m_rtv, clearColor);
 }
 
-void DXRender::Present(UINT syncInterval) const
+void DXRender::Present()
 {
     if (m_swapChain)
     {
-        m_swapChain->Present(syncInterval, 0);
+        m_swapChain->Present(1, 0);
     }
+}
+
+void DXRender::BeginFrame(const float clearColor[4])
+{
+    BeginBackbufferPass(clearColor);
 }
 
 bool DXRender::IsInitialized() const

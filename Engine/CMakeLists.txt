@@ -13,12 +13,14 @@ target_include_directories(Engine PUBLIC
     external/DDSTextureLoader
 )
 
+find_package(Vulkan REQUIRED)
 target_link_libraries(Engine PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}/external/GLFW/lib-vc2022/glfw3.lib"
     d3d11.lib
     dxgi.lib
     d3dcompiler.lib
     opengl32.lib
+    Vulkan::Vulkan
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/Engine/$<CONFIG>/Runtime)

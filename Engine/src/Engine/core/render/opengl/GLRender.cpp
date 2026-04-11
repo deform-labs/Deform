@@ -36,7 +36,16 @@ void GLRender::Shutdown()
     m_window = nullptr;
 }
 
-void GLRender::BeginFrame(const float clearColor[4]) const
+void GLRender::Resize(unsigned int width, unsigned int height)
+{
+    if (!m_window)
+        return;
+
+    glfwMakeContextCurrent(m_window);
+    glViewport(0, 0, width, height);
+}
+
+void GLRender::BeginFrame(const float clearColor[4])
 {
     if (!m_window)
         return;
@@ -51,7 +60,7 @@ void GLRender::BeginFrame(const float clearColor[4]) const
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void GLRender::Present() const
+void GLRender::Present()
 {
     if (m_window)
     {
