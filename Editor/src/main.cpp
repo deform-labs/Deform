@@ -1,13 +1,25 @@
 //header files
-#include <GLFW/glfw3.h>
+//
+#include <GLFW/glfw3.h> // A library for creating windows and handling input, used for creating the editor window and managing user interactions.
+#include <string>
+
+// ImGui backends for GLFW and DirectX 11, used for rendering the editor's UI.
 #include "../external/imgui/backends/imgui_impl_glfw.h"
 #include "../external/imgui/backends/imgui_impl_dx11.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
-#include "Editor.h"
 
-Window m_window; // The Application window class, responsible for creating and managing the GLFW window and its associated graphics API context.
-DXRender m_renderer; // The DirectX 11 renderer class, responsible for initializing DirectX, creating the swap chain and render target views, and handling rendering operations.
+// Engine headers for logging, rendering, and window management, used for creating the renderer, managing the application window, and logging messages and errors.
+#include "Engine.h" // The main header for the engine, which includes all the necessary components and systems for rendering, logging, and window management.
+#include "Engine/core/render/d3d11/DXRender.h" // The DirectX 11 renderer class, responsible for initializing DirectX, creating the swap chain and render target views, and handling rendering operations.
+#include "Engine/graphics/Window.h" // The Window class, responsible for creating and managing the GLFW window and its associated graphics API context.
+#include "imgui.h" // The main header for ImGui, a popular immediate mode GUI library used for creating the editor's user interface.
+
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h" // A header-only library for loading images, used for loading textures and icons in the editor.
+
+#include "Editor.h" // The header file for the editor, which includes the definition of the UIState struct and the UI panel classes.
+
+Window m_window; // The Application window Variable, responsible for creating and managing the GLFW window and its associated graphics API context.
+DXRender m_renderer; // The DirectX 11 renderer Variable, responsible for initializing DirectX, creating the swap chain and render target views, and handling rendering operations.
 Editor::UIState m_state; // A struct that holds the state of the editor's UI, including which panels are visible and the clear color for the scene.
 
 // Callback for when the window is resized. Resizes the renderer's backbuffer to match the new window size.
@@ -139,7 +151,7 @@ bool InitializeImGui()
 // Initialize the application by creating the editor window, initializing the renderer, setting up the framebuffer resize callback, and initializing ImGui. Logs errors and shuts down if any step fails.
 bool Initialize()
 {
-    
+
     if (!CreateEditorWindow("Deform Editor", WindowGraphicsAPI::DX11))
     {
         return false;
@@ -187,7 +199,7 @@ int Run()
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
         m_renderer.Present();
     }
-    
+
     Shutdown();
     return 0;
 }

@@ -10,9 +10,6 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-#include "../core/render/d3d11/DXRender.h" // Include the DirectX 11 renderer header for setting the window title with the renderer name
-#include "../core/render/vulkan/VKRender.h" // Include the Vulkan renderer header for setting the window title with the renderer name
-#include "../core/render/opengl/GLRender.h" // Include the OpenGL renderer header for setting the window title with the renderer name
 
 // CONSTRUCTOR AND OVERLOADS
 Window::Window() : m_Window(nullptr), m_Width(0), m_Height(0), m_Created(false) {}
