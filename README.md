@@ -20,10 +20,11 @@ Deform is built to explore low-level engine architecture and real-time object ma
 
 ```
 Deform/
-├── src/
-│   ├── Engine/         # Core engine (compiled to DLL)
-│   └── Editor/         # Editor application, links engine
-├── bin/                # Build output
+│
+├── Assets/         # Sample assets (models, textures)
+├── Engine/         # Core engine (compiled to DLL)
+├── Editor/         # Editor application, links engine
+├── tools/          # tools necessary for development
 └── CMakeLists.txt
 ```
 
