@@ -11,7 +11,7 @@
 #include "stb_image.h"
 
 
-// CONSTRUCTOR AND OVERLOADS
+// The Window class is responsible for creating and managing the application window using GLFW, as well as handling the associated graphics API context (OpenGL, DirectX 11, or Vulkan). It provides methods for creating the window, polling events, checking if the window should close, and retrieving the window handle and framebuffer size.
 Window::Window() : m_Window(nullptr), m_Width(0), m_Height(0), m_Created(false) {}
 
 // Create a new window with the specified title, icon, dimensions, and graphics API. Returns true if the window was created successfully, false otherwise.
@@ -158,13 +158,15 @@ void Window::GetFramebufferSize(int& width, int& height) const
 }
 
 // Get the current width of the window
-int Window::GetWidth() const
-{
-    return m_Width;
+int Window::GetWidth() const {
+    int w, h;
+    if (m_Window) glfwGetFramebufferSize(m_Window, &w, &h);
+    return w;
 }
 
 // Get the current height of the window
-int Window::GetHeight() const
-{
-    return m_Height;
+int Window::GetHeight() const {
+    int w, h;
+    if (m_Window) glfwGetFramebufferSize(m_Window, &w, &h);
+    return h;
 }

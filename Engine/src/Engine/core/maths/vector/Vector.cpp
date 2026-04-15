@@ -1,5 +1,4 @@
 // Vector.cpp
-
 #include "Vector.h"
 
 // This is a 2D vector class that represents a point or direction in 2D space. It has two float members, X and Y, which store the horizontal and vertical components of the vector, respectively. The class provides constructors for initializing the vector and getter methods to access its components.

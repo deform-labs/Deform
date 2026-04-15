@@ -4,7 +4,14 @@
 *.db-shm
 *.vsidx
 *.ini
+.cache/
 build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
 imgui.ini
 *.user
 imgui_debug.txt

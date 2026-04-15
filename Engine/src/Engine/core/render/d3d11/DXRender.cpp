@@ -1,3 +1,9 @@
+#include <d3dcommon.h>
+#include <dxgiformat.h>
+#include <minwindef.h>
+#include <windef.h>
+#include <winerror.h>
+#include <winnt.h>
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
 
@@ -11,7 +17,6 @@
 #include "DXRender.h"
 #include "Engine.h"
 
-#include "../IRenderer.h"
 
 using namespace deform;
 
@@ -34,9 +39,7 @@ namespace
     also creates an off-screen scene texture for rendering to imgui.
     returns true if initialization succeeds, false otherwise.
 */
-
-bool DXRender::Initialize(GLFWwindow *glfwWindow)
-{
+bool DXRender::Initialize(GLFWwindow *glfwWindow) {
     if (!glfwWindow)
     {
         Logger::FatalError("DXRender::Initialize received a null window.");
@@ -96,8 +99,8 @@ bool DXRender::Initialize(GLFWwindow *glfwWindow)
 
     D3D11_TEXTURE2D_DESC backBufferDesc = {};
     backBuffer->GetDesc(&backBufferDesc);
-    UINT sceneWidth = 1280;
-    UINT sceneHeight = 720;
+    UINT sceneWidth = backBufferDesc.Width;
+    UINT sceneHeight = backBufferDesc.Height;
 
     hr = m_device->CreateRenderTargetView(backBuffer, nullptr, &m_rtv);
     backBuffer->Release();
@@ -157,8 +160,7 @@ bool DXRender::Initialize(GLFWwindow *glfwWindow)
     Clears the device context state, then releases the swap chain,
     device, and all render target views in reverse order of creation.
 */
-void DXRender::Shutdown()
-{
+void DXRender::Shutdown() {
     if (m_context)
     {
         m_context->ClearState();
@@ -178,8 +180,7 @@ void DXRender::Shutdown()
     Recreates the back buffer render target view and scene texture with new dimensions.
     Called when the window is resized to maintain proper rendering surfaces.
 */
-void DXRender::Resize(unsigned int width, unsigned int height)
-{
+void DXRender::Resize(unsigned int width, unsigned int height) {
     if (!m_swapChain || !m_device || !m_context || width == 0 || height == 0)
     {
         return;
@@ -231,8 +232,7 @@ void DXRender::Resize(unsigned int width, unsigned int height)
     Sets the back buffer as the active render target and clears it with the specified clear color.
     This should be called at the beginning of each frame for rendering to the main window.
 */
-void DXRender::BeginBackbufferPass(const float clearColor[4]) const
-{
+void DXRender::BeginBackbufferPass(const float clearColor[4]) const {
     if (!m_context || !m_rtv)
     {
         return;
@@ -247,8 +247,7 @@ void DXRender::BeginBackbufferPass(const float clearColor[4]) const
     Swaps the back buffer with the front buffer to display the rendered content on screen.
     Blocks until the frame is presented (vsync enabled).
 */
-void DXRender::Present()
-{
+void DXRender::Present() {
     if (m_swapChain)
     {
         m_swapChain->Present(1, 0);
@@ -259,16 +258,16 @@ void DXRender::Present()
     Begins a new frame by preparing the back buffer for rendering.
     Clears the back buffer with the specified color in preparation for drawing.
 */
-void DXRender::BeginFrame(const float clearColor[4])
-{
-    BeginBackbufferPass(clearColor);
+void DXRender::BeginFrame(const float clearColor[4]) {
+    if (!m_context || !m_rtv) return;
+    m_context->OMSetRenderTargets(1, &m_rtv, nullptr);
+    m_context->ClearRenderTargetView(m_rtv, clearColor);
 }
 
 /* 
     Checks if the renderer has been successfully initialized.
     Returns true if the renderer is ready for rendering, false otherwise.
 */
-bool DXRender::IsInitialized() const
-{
+bool DXRender::IsInitialized() const {
     return m_window != nullptr;
 }

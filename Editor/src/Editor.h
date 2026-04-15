@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable: 4005) // Disable macro redefinition warning for ImGui headers
 
 #include "imgui.h"
 
@@ -17,7 +18,7 @@ namespace Editor {
         bool showInspector = true;
         bool showScene = true;
         bool showConsole = true;
-        float clearColor[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
+        float clearColor[4] = { 0.1f, 0.1f, 0.1f, 1.0f };
     };
 
     // The UI namespace contains classes for each of the editor's panels (Hierarchy, Inspector, MainBar, Console) with static methods to update their contents.
