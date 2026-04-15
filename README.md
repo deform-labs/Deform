@@ -6,30 +6,6 @@ Deform is built to explore low-level engine architecture and real-time object ma
 
 ---
 
-## Features
-
-- **DirectX 11** rendering backend with HLSL shader support
-- **Dear ImGui** editor UI with docking and panel system
-- Engine/editor split — engine exposed as a Windows DLL via `DEFORM_API`
-- Structured panel architecture under `Editor::UI` namespace
-- Written in modern C++23
-
----
-
-## Project Structure
-
-```
-Deform/
-│
-├── Assets/         # Sample assets (models, textures)
-├── Engine/         # Core engine (compiled to DLL)
-├── Editor/         # Editor application, links engine
-├── tools/          # tools necessary for development
-└── CMakeLists.txt
-```
-
----
-
 ## Building
 
 ### Requirements
