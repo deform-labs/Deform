@@ -7,6 +7,7 @@ Deform is built to explore low-level engine architecture and real-time object ma
 
 ---
 
+<<<<<<< HEAD
 ## Features
 
 - **DirectX 11** rendering backend with HLSL shader support
@@ -15,6 +16,8 @@ Deform is built to explore low-level engine architecture and real-time object ma
 - Structured panel architecture under `Editor::UI` namespace
 - Written in modern C++23
 
+=======
+>>>>>>> aea115c70f49ce777d32994444987f4c8bfe8c24
 ## Building
 
 ### Requirements
