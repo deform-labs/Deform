@@ -1,9 +1,15 @@
 # Deform Engine
-# Deform Engine has been fully rewritten to rust!
+# I'm looking for contributors to help rewrite Deform in Rust. The engine already has a working C++ version. Now moving to Rust with winit, wgpu and egui."
 
 > A custom-built Rust game engine focused on transformation and deformation systems.
 
 Deform is built to explore low-level engine architecture and real-time object manipulation, demonstrating core concepts behind modern engines, system design, modular architecture, and transformation pipelines. The engine and editor are kept separate: the engine ships as a Windows DLL (`DEFORM_API`) and the editor links against it, keeping the core lean and the tooling flexible.
+
+## Status 
+
+The Rust rewrite is in progress. 
+The engine currently has stubs for several systems. 
+Check the cpp-version branch for the complete C++ version. Contributions welcome!
 
 ## Building
 
