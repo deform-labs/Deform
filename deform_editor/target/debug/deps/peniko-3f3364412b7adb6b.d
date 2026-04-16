@@ -1,0 +1,11 @@
+C:\Users\youssef\3D Objects\deform\deform_editor\target\debug\deps\peniko-3f3364412b7adb6b.d: C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\lib.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\blend.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\brush.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\gradient.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\image.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\style.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\impl_bytemuck.rs
+
+C:\Users\youssef\3D Objects\deform\deform_editor\target\debug\deps\libpeniko-3f3364412b7adb6b.rmeta: C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\lib.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\blend.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\brush.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\gradient.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\image.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\style.rs C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\impl_bytemuck.rs
+
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\lib.rs:
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\blend.rs:
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\brush.rs:
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\gradient.rs:
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\image.rs:
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\style.rs:
+C:\Users\youssef\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\peniko-0.6.0\src\impl_bytemuck.rs:

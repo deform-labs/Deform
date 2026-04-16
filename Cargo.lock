@@ -3,12 +3,5 @@
 version = 4
 
 [[package]]
-name = "deform"
-version = "0.5.8"
-dependencies = [
- "deform_core",
-]
-
-[[package]]
 name = "deform_core"
 version = "0.5.6"
