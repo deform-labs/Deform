@@ -1,0 +1,10 @@
+[package]
+name = "deform_editor"
+version = "0.1.0"
+edition = "2021"  # Change from 2024 to 2021
+
+[[bin]]
+name = "deform"
+path = "src/main.rs"
+
+[dependencies]

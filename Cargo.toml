@@ -1,0 +1,11 @@
+[package]
+name = "deform"
+version = "0.5.8"
+edition = "2021"  # Change from 2024 to 2021
+
+[lib]
+name = "deform"
+crate-type = ["cdylib"]  # This creates a DLL on Windows
+
+[dependencies]
+deform_core = { version = "0.5.6", path = "deform_core" }

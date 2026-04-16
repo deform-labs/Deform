@@ -1,1 +1,0 @@
-& "build\Editor\Release\Editor.exe"

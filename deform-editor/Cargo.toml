@@ -1,0 +1,8 @@
+﻿[package]
+name = "deform-editor"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+deform_core = { path = "../deform_core" }
+
