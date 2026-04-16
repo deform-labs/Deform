@@ -9,9 +9,7 @@ Deform is built to explore low-level engine architecture and real-time object ma
 
 ### Requirements
 
-- Windows 10/11
-- Visual Studio 2022 with **Desktop development with C++** workload
-- Windows SDK (DirectX 11 included)
+- Cargo
 
 ### Steps
 
