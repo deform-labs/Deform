@@ -1,5 +1,5 @@
 # Deform Engine
-# I'm looking for contributors to help rewrite Deform in Rust. The engine already has a working C++ version. Now moving to Rust with winit, wgpu and egui."
+# I'm looking for contributors to help rewrite Deform in Rust. The engine already has a working C++ version. Now moving to Rust with winit, wgpu and egui.
 
 > A custom-built Rust game engine focused on transformation and deformation systems.
 
